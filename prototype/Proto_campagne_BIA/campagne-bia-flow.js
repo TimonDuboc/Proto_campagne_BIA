@@ -545,12 +545,12 @@
       '<td class="ds-table__td"><span class="proto-campagne__inline-cell"><span>' +
       escapeHtmlManual(destLabel) +
       '</span><button type="button" class="ds-table__btn-icon" aria-label="Voir le détail des destinataires">' +
-      '<img src="../../src/assets/icons/eye-16.svg" width="16" height="16" alt="" aria-hidden="true" /></button></span></td>' +
+      '<img src="src/assets/icons/eye-16.svg" width="16" height="16" alt="" aria-hidden="true" /></button></span></td>' +
       '<td class="ds-table__td">' +
       statutHtml +
       "</td>" +
       '<td class="ds-table__td"><button type="button" class="ds-table__btn-icon" aria-label="Actions sur la ligne">' +
-      '<img src="../../src/assets/icons/more-vertical-16-text-neutral-standard.svg" width="16" height="16" alt="" aria-hidden="true" /></button></td>';
+      '<img src="src/assets/icons/more-vertical-16-text-neutral-standard.svg" width="16" height="16" alt="" aria-hidden="true" /></button></td>';
     tr.className = "proto-campagne__row proto-campagne__row--clickable";
     tr.setAttribute("tabindex", "0");
     tr._cbSnapshot = s;
@@ -1191,11 +1191,11 @@
       '<td class="ds-table__td ds-table__td--row-actions">' +
       '<div class="cb-launched-row-menu" data-cb-signed="true">' +
       '<button type="button" class="ds-table__btn-icon cb-launched-row-menu__trigger" aria-label="Actions pour cette ligne" aria-haspopup="menu" aria-expanded="false">' +
-      '<img src="../../src/assets/icons/more-vertical-16-text-neutral-standard.svg" width="16" height="16" alt="" aria-hidden="true" /></button>' +
+      '<img src="src/assets/icons/more-vertical-16-text-neutral-standard.svg" width="16" height="16" alt="" aria-hidden="true" /></button>' +
       '<div class="ds-dropdown-content cb-launched-row-menu__panel" role="menu" aria-label="Actions pour cette ligne" hidden>' +
       '<ul class="ds-dropdown-content__list"><li role="none">' +
       '<button type="button" class="ds-dropdown-content__item cb-launched-row-download-bia" role="menuitem">' +
-      '<img src="../../src/assets/icons/download-16.svg" width="16" height="16" alt="" aria-hidden="true" />' +
+      '<img src="src/assets/icons/download-16.svg" width="16" height="16" alt="" aria-hidden="true" />' +
       "Télécharger le BIA" +
       "</button></li></ul></div></div></td>"
     );
