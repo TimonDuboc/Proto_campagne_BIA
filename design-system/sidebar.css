@@ -1,0 +1,286 @@
+/**
+ * Design System — Sidebar gauche (contexte + carte récap)
+ *
+ * Fond décoratif : **SidebarLeft/Background/Purple** · Figma **`9935:2718`** (équiv. historique **`16263:2105`**) · fichier `6H039ekCchRzRPW2MNPq3V`
+ * Bloc titre / carte : pattern **TitleBlock/Admin** · `16263:4705` (anatomie réutilisable)
+ * Picto titre : slot **`ds-title-horizontal-picto`** (cercle 36×36, primary/100) · `title-horizontal-picto.css` · Figma **13020:2901**
+ * Usage produit bailleur : **Sidebar-left** PDT-512 · `4591:6240` · fichier `PNx45tC1Ibn3Kw6BDqjWh1`
+ * Bloc titre + sous-titre : **TitleHorizontal** dans **TitleBlock/Admin** · Figma **`16263:4623`** / **`I16263:4623;10059:2503`**
+ * Spacing colonne + retour hors carte : **Body** · `4591:6329` (Return au-dessus du TitleBlock, `gap` 1px)
+ *
+ * Dépend des tokens projet (fallbacks entre parenthèses) : `--color-background-info-weak`,
+ * `--color-primary-100`, `--color-module`, `--color-neutral-300`, `--color-text-module-title`,
+ * `--color-text-caption` ou `--color-text-neutral-weak`, `--font-family`, `--space-*`, `--radius-*`,
+ * `--color-border-info-standard`, `--color-border-brand-standard`, `--color-bg-brand-standard`,
+ * `--focus-ring`, `--font-size-body-large`, `--line-height-xl`, etc.
+ */
+
+:root {
+  --ds-sidebar-shadow-card: 0 0 6px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
+  --ds-sidebar-width-card: 300px;
+}
+
+/* ——— Zone colonne (fond dégradé + décor) ——— */
+.ds-sidebar-left {
+  position: relative;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: var(--space-medium-3, 20px) var(--space-large-2, 40px) var(--space-large-2, 40px);
+  /* Figma 16263:2105 : gradient vers la gauche, info/weak → primary/100 vers ~76,5 % */
+  background: linear-gradient(
+    270deg,
+    var(--color-background-info-weak, #f9f9ff) 0%,
+    var(--color-primary-100, #f1effe) 76.5%,
+    var(--color-primary-100, #f1effe) 100%
+  );
+  overflow: hidden;
+}
+
+.ds-sidebar-left__decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ds-sidebar-left__blob {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--color-bg-brand-standard, #0f00b8);
+  opacity: 0.05;
+}
+
+.ds-sidebar-left__blob--1 {
+  width: 775px;
+  height: 775px;
+  top: -445px;
+  left: -303px;
+}
+
+.ds-sidebar-left__blob--2 {
+  width: 353px;
+  height: 353px;
+  top: 717px;
+  left: -22px;
+  border-radius: 40% 45% 42% 48%;
+}
+
+.ds-sidebar-left__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: var(--ds-sidebar-width-card);
+  max-width: 100%;
+}
+
+/* Colonne 300px : retour sur le dégradé + carte TitleBlock (Figma 4591:6333 — gap 1px) */
+.ds-sidebar-left__column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1px;
+  width: 100%;
+}
+
+.ds-sidebar-left__panel {
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--space-large-2, 40px) var(--space-large-1, 32px);
+  background: var(--color-module, #ffffff);
+  border-radius: var(--radius-medium, 4px);
+  box-shadow: var(--ds-sidebar-shadow-card);
+}
+
+/* ——— Retour (hors carte blanche — Figma Return 4591:6334, pb medium-2) ——— */
+.ds-sidebar-left__return {
+  flex-shrink: 0;
+  width: 100%;
+  padding-bottom: var(--space-medium-2, 16px);
+}
+
+.ds-sidebar-left__back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-small-2, 4px);
+  min-height: 32px;
+  padding: var(--space-small-3, 8px);
+  margin: 0;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-s, 14px);
+  font-weight: 400;
+  line-height: var(--line-height-s, 22px);
+  color: var(--color-text-neutral-standard, #404043);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-small, 2px);
+  cursor: pointer;
+}
+
+.ds-sidebar-left__back-btn:hover {
+  color: var(--color-text-neutral-strong, #141416);
+}
+
+.ds-sidebar-left__back-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(21, 0, 247, 0.25));
+}
+
+.ds-sidebar-left__back-btn img {
+  display: block;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.ds-sidebar-title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-medium-1, 12px);
+  width: 100%;
+  min-width: 0;
+}
+
+.ds-sidebar-title-row__picto {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title+subtitle — aligné Figma TitleBlock/Admin · frame Title+subtitle `I16263:4623;10059:2503` */
+.ds-sidebar-title-row__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-medium-1, 12px);
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+/* Rangée « Title » (slot titre seul ou titre + picto 16 futur) · `I16263:4623;5731:9664` */
+.ds-sidebar-title-row__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small-3, 8px);
+  width: 100%;
+  min-width: 0;
+}
+
+.ds-sidebar-title-row__heading {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-large, 18px);
+  font-weight: 700;
+  line-height: var(--line-height-xl, 26px);
+  color: var(--color-text-module-title, #0b007d);
+  overflow-wrap: anywhere;
+}
+
+/* Sous-titre · `I16263:4623;10059:2352` — caption-1, line-height xs, color/text/caption */
+.ds-sidebar-title-row__subtitle {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-caption, 12px);
+  font-weight: 400;
+  line-height: var(--line-height-xs, 20px);
+  color: var(--color-text-caption, #878787);
+}
+
+.ds-sidebar-sep {
+  margin: 0;
+  border: none;
+  height: 1px;
+  background: var(--color-neutral-300, #e2e2e2);
+  width: 100%;
+}
+
+.ds-sidebar-left__stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium-4, 24px);
+  width: 100%;
+}
+
+/* Tag pill — variantes PDT-512 (GLI / BIA signé) */
+.ds-sidebar-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 3px var(--space-small-3, 8px);
+  border-radius: var(--radius-full, 666px);
+  border: 1px solid transparent;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.ds-sidebar-tag__label {
+  margin: 0;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-s, 14px);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--color-text-neutral-standard, #404043);
+}
+
+.ds-sidebar-tag__icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.ds-sidebar-tag--gli {
+  background: var(--color-background-info-weak, #f9f9ff);
+  border-color: var(--color-primary-200, #bdb7ff);
+}
+
+.ds-sidebar-tag--bia {
+  background: var(--color-background-info-weak, #f9f9ff);
+  border-color: var(--color-border-brand-standard, #0f00b8);
+}
+
+/* Bloc label / valeur */
+.ds-sidebar-data {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium-1, 12px);
+  align-items: flex-start;
+}
+
+.ds-sidebar-data__label {
+  margin: 0;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-caption, 12px);
+  font-weight: 700;
+  line-height: var(--line-height-xs, 20px);
+  color: var(--color-text-neutral-standard, #404043);
+}
+
+.ds-sidebar-data__value {
+  margin: 0;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-s, 14px);
+  font-weight: 400;
+  line-height: var(--line-height-s, 22px);
+  color: var(--color-text-body, #404043);
+}
+
+.ds-sidebar-left__tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-medium-3, 20px);
+  align-items: center;
+}

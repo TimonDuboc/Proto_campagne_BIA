@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prototype — Campagne BIA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../design-system/title-horizontal-picto.css" />
+    <link rel="stylesheet" href="../../design-system/sidebar.css" />
+    <link rel="stylesheet" href="../../design-system/tag-rounded-filled.css" />
+    <link rel="stylesheet" href="../../design-system/table.css" />
+    <link rel="stylesheet" href="../../design-system/button.css" />
+    <link rel="stylesheet" href="../../design-system/combo-box.css" />
+    <link rel="stylesheet" href="../../design-system/progress-bar.css" />
+    <link rel="stylesheet" href="../../design-system/file-upload.css" />
+    <link rel="stylesheet" href="../../design-system/snackbar.css" />
+    <link rel="stylesheet" href="../../design-system/action-bar.css" />
+    <link rel="stylesheet" href="../../design-system/dropdown-content.css" />
+    <link rel="stylesheet" href="../../design-system/modal-empty-state.css" />
+    <link rel="stylesheet" href="campagne-bia.css" />
+    <link rel="stylesheet" href="campagne-bia-modal.css" />
+    <link rel="stylesheet" href="campagne-bia-manual-screen.css" />
+  </head>
+  <body>
+    <p class="prototype-page__intro">
+      Prototype · premier écran du flow
+      <a
+        href="https://www.figma.com/design/kUvAJUSmDQ9i1GlsTF0qGX/PDT-490---GLI-Individual-Enrollment-Certificate?node-id=3819-17014"
+        >Figma · Mes campagnes de signatures (3819:17014)</a
+      >.
+    </p>
+
+    <!-- Figma: Widget/Responsive-1920 · 3819:17014 -->
+    <div id="proto-campagne-root" class="proto-campagne" data-node-id="3819:17014">
+      <header class="proto-app-header" aria-label="En-tête application" data-node-id="4154:46155">
+        <div class="proto-app-header__left">
+          <div class="proto-app-header__logo">
+            <img
+              src="../../src/assets/icons/brand/application-logo-pdt490-48.svg"
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+          <nav class="proto-app-header__nav" aria-label="Navigation principale">
+            <div class="proto-app-header__nav-cluster">
+              <button type="button" class="proto-app-header__menu-link">
+                Mes dossiers
+                <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+              </button>
+              <button type="button" class="proto-app-header__menu-link">
+                Mes lots
+                <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+              </button>
+              <button type="button" class="proto-app-header__menu-link">
+                Mes sinistres
+                <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+              </button>
+            </div>
+            <span class="proto-app-header__divider" aria-hidden="true"></span>
+            <button type="button" class="proto-app-header__menu-link proto-app-header__menu-link--accent">
+              Accès direct
+              <img
+                class="proto-app-header__chevron-on-accent"
+                src="../../src/assets/icons/chevron-down-16.svg"
+                width="16"
+                height="16"
+                alt=""
+                aria-hidden="true"
+              />
+            </button>
+          </nav>
+        </div>
+        <div class="proto-app-header__right">
+          <button type="button" class="proto-app-header__icon-btn" aria-label="Notifications">
+            <img src="../../src/assets/icons/bell-24.svg" width="24" height="24" alt="" aria-hidden="true" />
+          </button>
+          <button type="button" class="proto-app-header__icon-btn" aria-label="Messages non lus">
+            <img src="../../src/assets/icons/message-square-24.svg" width="24" height="24" alt="" aria-hidden="true" />
+            <span class="proto-app-header__badge">3</span>
+          </button>
+          <button type="button" class="proto-app-header__icon-btn" aria-label="Assistance téléphonique">
+            <img src="../../src/assets/icons/phone-24.svg" width="24" height="24" alt="" aria-hidden="true" />
+          </button>
+          <span class="proto-app-header__divider" aria-hidden="true"></span>
+          <div class="proto-app-header__profil">
+            <div class="proto-app-header__avatar" aria-hidden="true">
+              <span class="proto-app-header__avatar-letter">G</span>
+            </div>
+            <button type="button" class="proto-app-header__profil-btn" aria-label="Menu profil">
+              <span class="proto-app-header__profil-text">
+                <span class="proto-app-header__profil-name">Geoffrey Kazmierczak</span>
+                <span class="proto-app-header__profil-email">mon.email@monemail.com</span>
+              </span>
+              <img
+                src="../../src/assets/icons/chevron-down-16.svg"
+                width="16"
+                height="16"
+                alt=""
+                aria-hidden="true"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section class="proto-campagne__hero" aria-labelledby="campagne-title">
+        <div class="proto-campagne__title-row">
+          <div class="proto-campagne__title-block">
+            <div class="ds-title-horizontal-picto">
+              <img
+                src="../../src/assets/icons/brand/people-2-pdt490-36.svg"
+                width="36"
+                height="36"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <h1 id="campagne-title" class="proto-campagne__h1">Mes campagnes de signatures</h1>
+          </div>
+          <button
+            type="button"
+            class="proto-campagne__btn-primary-outline"
+            id="open-modal-nouvelle-campagne"
+          >
+            <img src="../../src/assets/icons/plus-circle-16-text-neutral-standard.svg" width="16" height="16" alt="" aria-hidden="true" />
+            Nouvelle campagne
+          </button>
+        </div>
+
+        <div class="proto-campagne__tabs" role="tablist" aria-label="Filtre des campagnes">
+          <button type="button" class="proto-campagne__tab proto-campagne__tab--active" role="tab" aria-selected="true">
+            Toutes
+            <span class="proto-campagne__tab-badge proto-campagne__tab-badge--inverse">1</span>
+          </button>
+          <button type="button" class="proto-campagne__tab" role="tab" aria-selected="false">Lancées</button>
+          <button type="button" class="proto-campagne__tab" role="tab" aria-selected="false">
+            Brouillons
+            <span class="proto-campagne__tab-badge proto-campagne__tab-badge--muted">1</span>
+          </button>
+        </div>
+      </section>
+
+      <div class="proto-campagne__filters">
+        <div class="proto-campagne__search" role="search">
+          <span>Rechercher par référence</span>
+          <img src="../../src/assets/icons/search-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+        </div>
+        <div class="proto-campagne__filter-field">
+          <button type="button" class="proto-campagne__select" aria-haspopup="listbox">
+            <span>Date de début</span>
+            <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+          </button>
+        </div>
+        <div class="proto-campagne__filter-field">
+          <button type="button" class="proto-campagne__select" aria-haspopup="listbox">
+            <span>Date de fin</span>
+            <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+          </button>
+        </div>
+        <div class="proto-campagne__filter-field">
+          <button type="button" class="proto-campagne__select" aria-haspopup="listbox">
+            <span>Lot(s)</span>
+            <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+          </button>
+        </div>
+        <div class="proto-campagne__filter-field">
+          <button type="button" class="proto-campagne__select" aria-haspopup="listbox">
+            <span>Adresse</span>
+            <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+          </button>
+        </div>
+        <div class="proto-campagne__filter-field">
+          <button type="button" class="proto-campagne__select" aria-haspopup="listbox">
+            <span>Locataire</span>
+            <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+          </button>
+        </div>
+        <div class="proto-campagne__filter-field">
+          <button type="button" class="proto-campagne__select" aria-haspopup="listbox">
+            <span>Propriétaire</span>
+            <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+          </button>
+        </div>
+        <div class="proto-campagne__filter-field">
+          <button type="button" class="proto-campagne__select" aria-haspopup="listbox">
+            <span>Statut</span>
+            <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+          </button>
+        </div>
+        <button type="button" class="proto-campagne__filter-more">
+          <img src="../../src/assets/icons/sliders-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+          + de filtres
+          <span class="proto-campagne__filter-more-badge">1</span>
+        </button>
+      </div>
+
+      <div class="proto-campagne__body">
+        <div class="proto-campagne__table-scroll">
+          <div class="ds-table-shell">
+            <table class="ds-table">
+              <thead>
+                <tr>
+                  <th class="ds-table__th ds-table__th--checkbox" scope="col">
+                    <input type="checkbox" class="ds-table__checkbox" aria-label="Tout sélectionner" />
+                  </th>
+                  <th class="ds-table__th" scope="col">Nom Campagne</th>
+                  <th class="ds-table__th" scope="col">Date de lancement</th>
+                  <th class="ds-table__th" scope="col">
+                    <span class="ds-table__th-inner">
+                      Type de campagne
+                      <button type="button" class="ds-table__sort" aria-label="Trier par type de campagne">
+                        <img src="../../src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                      </button>
+                    </span>
+                  </th>
+                  <th class="ds-table__th" scope="col">
+                    <span class="ds-table__th-inner">
+                      Contrat cadre
+                      <button type="button" class="ds-table__sort" aria-label="Trier par contrat cadre">
+                        <img src="../../src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                      </button>
+                    </span>
+                  </th>
+                  <th class="ds-table__th" scope="col">
+                    <span class="ds-table__th-inner">
+                      produit
+                      <button type="button" class="ds-table__sort" aria-label="Trier par produit">
+                        <img src="../../src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                      </button>
+                    </span>
+                  </th>
+                  <th class="ds-table__th" scope="col">
+                    <span class="ds-table__th-inner">
+                      Taux
+                      <button type="button" class="ds-table__sort" aria-label="Trier par taux">
+                        <img src="../../src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                      </button>
+                    </span>
+                  </th>
+                  <th class="ds-table__th" scope="col">
+                    <span class="ds-table__th-inner">
+                      Nombre de destinataires
+                      <button type="button" class="ds-table__sort" aria-label="Trier par nombre de destinataires">
+                        <img src="../../src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                      </button>
+                    </span>
+                  </th>
+                  <th class="ds-table__th" scope="col">
+                    <span class="ds-table__th-inner">
+                      statut
+                      <button type="button" class="ds-table__sort" aria-label="Trier par statut">
+                        <img src="../../src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                      </button>
+                    </span>
+                  </th>
+                  <th class="ds-table__th" scope="col"><span class="visually-hidden">Actions</span></th>
+                </tr>
+              </thead>
+              <tbody id="proto-campagne-list-tbody">
+                <tr class="proto-campagne__row proto-campagne__row--legacy">
+                  <td class="ds-table__td ds-table__td--checkbox">
+                    <input type="checkbox" class="ds-table__checkbox" aria-label="Sélectionner la ligne" />
+                  </td>
+                  <td class="ds-table__td ds-table__td--strong">
+                    <span class="proto-campagne__table-link" role="presentation">Campagne BIA n°1</span>
+                  </td>
+                  <td class="ds-table__td ds-table__td--strong">-</td>
+                  <td class="ds-table__td">Campagne BIA</td>
+                  <td class="ds-table__td">Contrat n°1234</td>
+                  <td class="ds-table__td">GLI - Seyna - Habitation - LI+DI+PJ+SA</td>
+                  <td class="ds-table__td">3,1%</td>
+                  <td class="ds-table__td">
+                    <span class="proto-campagne__inline-cell">
+                      <span>20 destinataires</span>
+                      <button type="button" class="ds-table__btn-icon" aria-label="Voir le détail des destinataires">
+                        <img src="../../src/assets/icons/eye-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                      </button>
+                    </span>
+                  </td>
+                  <td class="ds-table__td">
+                    <span class="ds-table__tag-dropdown ds-table__tag-dropdown--grey" data-node-id="3819:17059">Brouillon</span>
+                  </td>
+                  <td class="ds-table__td">
+                    <button type="button" class="ds-table__btn-icon" aria-label="Actions sur la ligne" data-node-id="3819:17060">
+                      <img
+                        src="../../src/assets/icons/more-vertical-16-text-neutral-standard.svg"
+                        width="16"
+                        height="16"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Figma **3886:495628** · liste bailleurs saisie manuelle -->
+    <section id="cb-screen-bailleurs-manuel" class="cb-manual-screen" hidden data-node-id="3886:495628" aria-labelledby="cb-bailleurs-main-title">
+      <header class="proto-app-header cb-manual-screen__header" aria-label="En-tête application" data-node-id="4154:46155">
+        <div class="proto-app-header__left">
+          <div class="proto-app-header__logo">
+            <img
+              src="../../src/assets/icons/brand/application-logo-pdt490-48.svg"
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+          <nav class="proto-app-header__nav" aria-label="Navigation principale">
+            <div class="proto-app-header__nav-cluster">
+              <button type="button" class="proto-app-header__menu-link">
+                Mes dossiers
+                <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+              </button>
+              <button type="button" class="proto-app-header__menu-link">
+                Mes lots
+                <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+              </button>
+              <button type="button" class="proto-app-header__menu-link">
+                Mes sinistres
+                <img src="../../src/assets/icons/chevron-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+              </button>
+            </div>
+            <span class="proto-app-header__divider" aria-hidden="true"></span>
+            <button type="button" class="proto-app-header__menu-link proto-app-header__menu-link--accent">
+              Accès direct
+              <img
+                class="proto-app-header__chevron-on-accent"
+                src="../../src/assets/icons/chevron-down-16.svg"
+                width="16"
+                height="16"
+                alt=""
+                aria-hidden="true"
+              />
+            </button>
+          </nav>
+        </div>
+        <div class="proto-app-header__right">
+          <button type="button" class="proto-app-header__icon-btn" aria-label="Notifications">
+            <img src="../../src/assets/icons/bell-24.svg" width="24" height="24" alt="" aria-hidden="true" />
+          </button>
+          <button type="button" class="proto-app-header__icon-btn" aria-label="Messages non lus">
+            <img src="../../src/assets/icons/message-square-24.svg" width="24" height="24" alt="" aria-hidden="true" />
+            <span class="proto-app-header__badge">3</span>
+          </button>
+          <button type="button" class="proto-app-header__icon-btn" aria-label="Assistance téléphonique">
+            <img src="../../src/assets/icons/phone-24.svg" width="24" height="24" alt="" aria-hidden="true" />
+          </button>
+          <span class="proto-app-header__divider" aria-hidden="true"></span>
+          <div class="proto-app-header__profil">
+            <div class="proto-app-header__avatar" aria-hidden="true">
+              <span class="proto-app-header__avatar-letter">G</span>
+            </div>
+            <button type="button" class="proto-app-header__profil-btn" aria-label="Menu profil">
+              <span class="proto-app-header__profil-text">
+                <span class="proto-app-header__profil-name">Geoffrey Kazmierczak</span>
+                <span class="proto-app-header__profil-email">mon.email@monemail.com</span>
+              </span>
+              <img
+                src="../../src/assets/icons/chevron-down-16.svg"
+                width="16"
+                height="16"
+                alt=""
+                aria-hidden="true"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="cb-manual-screen__body">
+        <aside class="ds-sidebar-left cb-manual-screen__aside" aria-label="Résumé campagne" data-node-id="9935:2718">
+          <div class="ds-sidebar-left__decor" aria-hidden="true">
+            <div class="ds-sidebar-left__blob ds-sidebar-left__blob--1"></div>
+            <div class="ds-sidebar-left__blob ds-sidebar-left__blob--2"></div>
+          </div>
+          <div class="cb-manual-screen__aside-column">
+            <div class="cb-manual-screen__return">
+              <button type="button" class="cb-manual-screen__back" id="cb-manual-back-list">
+                <img
+                  src="../../src/assets/icons/arrow-left-16-text-neutral-standard.svg"
+                  width="16"
+                  height="16"
+                  alt=""
+                  aria-hidden="true"
+                />
+                Retour à la liste
+              </button>
+            </div>
+            <div class="ds-sidebar-left__panel" data-node-id="3915:141760">
+              <div class="ds-sidebar-left__stack">
+              <div class="ds-sidebar-title-row">
+                <div class="ds-sidebar-title-row__picto" aria-hidden="true">
+                  <span class="ds-title-horizontal-picto">
+                    <img
+                      src="../../src/assets/icons/brand/application-sidebar-pdt490-32.svg"
+                      width="32"
+                      height="32"
+                      alt=""
+                    />
+                  </span>
+                </div>
+                <div class="ds-sidebar-title-row__text">
+                  <div class="ds-sidebar-title-row__title">
+                    <p class="ds-sidebar-title-row__heading" id="cb-manual-campagne-title">Campagne n°20</p>
+                    <button type="button" class="ds-btn ds-btn--small ds-btn--neutral-filled" aria-label="Actions campagne">
+                      <img
+                        class="ds-btn__icon"
+                        src="../../src/assets/icons/more-vertical-16-text-neutral-standard.svg"
+                        width="16"
+                        height="16"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </button>
+                  </div>
+                  <p class="ds-sidebar-title-row__subtitle">BIA</p>
+                </div>
+              </div>
+              <hr class="ds-sidebar-sep" />
+              <div>
+                <span id="cb-manual-campagne-status" class="ds-table__tag-dropdown ds-table__tag-dropdown--grey"
+                  >Brouillon</span
+                >
+              </div>
+              <hr class="ds-sidebar-sep" />
+              <div class="ds-tag-rounded-filled-group" data-node-id="4153:43778">
+                <div class="ds-tag-rounded-filled">
+                  <div class="ds-tag-rounded-filled__elements">
+                    <img
+                      class="ds-tag-rounded-filled__icon"
+                      src="../../src/assets/icons/folder-16.svg"
+                      width="16"
+                      height="16"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    <p class="ds-tag-rounded-filled__label" id="cb-manual-meta-contrat">Contrat cadre n°1234</p>
+                  </div>
+                </div>
+                <div class="ds-tag-rounded-filled">
+                  <div class="ds-tag-rounded-filled__elements">
+                    <img
+                      class="ds-tag-rounded-filled__icon"
+                      src="../../src/assets/icons/file-text-16.svg"
+                      width="16"
+                      height="16"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    <p class="ds-tag-rounded-filled__label" id="cb-manual-meta-produit">GLI - Seyna - Habitation - LI+DI+PJ+SA</p>
+                  </div>
+                </div>
+                <div class="ds-tag-rounded-filled">
+                  <div class="ds-tag-rounded-filled__elements">
+                    <img
+                      class="ds-tag-rounded-filled__icon"
+                      src="../../src/assets/icons/tag-16.svg"
+                      width="16"
+                      height="16"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    <p class="ds-tag-rounded-filled__label" id="cb-manual-meta-taux">3,1&nbsp;%</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Fichier source · sidebar import fichier Figma **3819:18296** · **3915:139864** -->
+              <div id="cb-manual-sidebar-file-section" class="cb-manual-file-section" hidden data-node-id="3915:139864">
+                <hr class="ds-sidebar-sep" />
+                <div class="cb-manual-file-section__head">
+                  <img
+                    class="cb-manual-file-section__head-icon"
+                    src="../../src/assets/icons/file-text-16.svg"
+                    width="16"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <p class="cb-manual-file-section__title">Fichier source&nbsp;:</p>
+                </div>
+                <div class="cb-manual-file-section__chip">
+                  <img
+                    class="cb-manual-file-section__chip-icon"
+                    src="../../src/assets/icons/paperclip-16.svg"
+                    width="16"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <p class="cb-manual-file-section__chip-text" id="cb-manual-source-file-line">
+                    <span class="cb-manual-file-section__chip-name" id="cb-manual-source-file-name"></span>
+                    <span class="cb-manual-file-section__chip-sep" aria-hidden="true">•</span>
+                    <span class="cb-manual-file-section__chip-size" id="cb-manual-source-file-size"></span>
+                  </p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <main class="cb-manual-screen__main">
+          <div id="cb-manual-main-draft" class="cb-manual-main-phase">
+          <div class="cb-manual-screen__main-head">
+            <div class="cb-manual-screen__main-title-row">
+              <div class="ds-title-horizontal-picto">
+                <img src="../../src/assets/icons/checklist-24.svg" width="32" height="32" alt="" aria-hidden="true" />
+              </div>
+              <h1 class="cb-manual-screen__h1" id="cb-bailleurs-main-title">Liste de bailleurs</h1>
+            </div>
+            <button type="button" class="ds-btn ds-btn--brand-filled cb-manual-btn-lancer" id="cb-manual-btn-lancer" disabled>
+              <img
+                id="cb-manual-btn-lancer-icon"
+                class="ds-btn__icon cb-manual-btn-lancer__icon"
+                src="../../src/assets/icons/send-16-inverse.svg"
+                width="16"
+                height="16"
+                alt=""
+                aria-hidden="true"
+                hidden
+              />
+              Lancer la campagne
+            </button>
+          </div>
+
+          <div class="cb-manual-screen__list">
+            <div class="cb-manual-screen__filters-row">
+            <div class="cb-manual-screen__search" role="search">
+              <span class="cb-manual-screen__search-label">Rechercher par bailleur, locataire ou lot</span>
+              <img
+                class="cb-manual-screen__search-icon"
+                src="../../src/assets/icons/search-16.svg"
+                width="16"
+                height="16"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div id="cb-manual-gli-statuts-wrap" class="cb-manual-gli-statuts-wrap" hidden>
+              <button
+                type="button"
+                class="cb-manual-gli-statuts-btn"
+                id="cb-manual-statuts-filter"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+              >
+                <span>Statuts</span>
+                <img
+                  src="../../src/assets/icons/chevron-down-16.svg"
+                  width="16"
+                  height="16"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </button>
+            </div>
+            </div>
+
+            <div class="cb-manual-screen__table-wrap">
+              <!-- Table · Figma **3886:495671** — en-tête + empty state **3888:498740** · pied **3886:495702** · **3886:495708** -->
+              <div class="cb-manual-table-card">
+                <div class="cb-manual-table-card__shell">
+                  <table class="ds-table cb-manual-table-card__table">
+                    <thead>
+                      <tr>
+                        <th class="ds-table__th ds-table__th--checkbox" scope="col">
+                          <input
+                            type="checkbox"
+                            class="ds-table__checkbox"
+                            id="cb-manual-select-all"
+                            disabled
+                            aria-label="Tout sélectionner"
+                          />
+                        </th>
+                        <th class="ds-table__th" scope="col">Bailleur</th>
+                        <th class="ds-table__th" scope="col">SCI</th>
+                        <th class="ds-table__th" scope="col">Email</th>
+                        <th class="ds-table__th" scope="col">Adresse du lot</th>
+                        <th class="ds-table__th cb-manual-th--gli-status" id="cb-manual-th-gli-status" scope="col" hidden>
+                          Statut
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody id="cb-manual-bailleurs-tbody">
+                      <tr class="cb-manual-table-card__empty-row" id="cb-manual-empty-row">
+                        <td class="cb-manual-table-card__empty-cell" colspan="5">
+                          <div
+                            class="cb-manual-empty-state"
+                            role="img"
+                            aria-label="Aucun bailleur n’a été ajouté. Veuillez ajouter une ligne pour associer des bailleurs à la création de cette campagne."
+                          >
+                            <img
+                              class="cb-manual-empty-state__illustration"
+                              src="assets/cb-manual-empty-state.png"
+                              width="527"
+                              height="203"
+                              alt=""
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="cb-manual-table-card__summary" aria-live="polite">
+                    <p class="cb-manual-screen__count" id="cb-manual-bailleurs-count">Nombre total de bailleurs&nbsp;: 0</p>
+                  </div>
+
+                  <div class="cb-manual-table-card__footer-actions">
+                    <button type="button" class="cb-manual-screen__add-row" id="cb-manual-add-row">
+                      <img src="../../src/assets/icons/plus-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                      Ajouter une ligne
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <!-- Vue liste post-lancement · Figma **3819:18548** · sidebar état **3819:18534** -->
+          <div id="cb-manual-main-launched" class="cb-manual-main-phase cb-manual-main-launched" hidden>
+            <div class="cb-manual-launched__head">
+              <div class="cb-manual-launched__title-row">
+                <div class="ds-title-horizontal-picto">
+                  <img src="../../src/assets/icons/checklist-24.svg" width="32" height="32" alt="" aria-hidden="true" />
+                </div>
+                <h1 class="cb-manual-screen__h1">Liste de bailleurs</h1>
+              </div>
+              <div class="cb-launched-list-menu" data-node-id="4079:55953">
+                <button
+                  type="button"
+                  class="ds-btn ds-btn--small ds-btn--neutral-filled cb-launched-list-menu__trigger"
+                  id="cb-launched-list-actions-btn"
+                  aria-label="Actions sur la liste"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  aria-controls="cb-launched-list-actions-menu"
+                >
+                  <img
+                    class="ds-btn__icon"
+                    src="../../src/assets/icons/more-vertical-16-text-neutral-standard.svg"
+                    width="16"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+                <div
+                  id="cb-launched-list-actions-menu"
+                  class="ds-dropdown-content cb-launched-list-menu__panel"
+                  role="menu"
+                  aria-label="Actions sur la liste"
+                  hidden
+                >
+                  <ul class="ds-dropdown-content__list">
+                    <li role="none">
+                      <button
+                        type="button"
+                        class="ds-dropdown-content__item"
+                        id="cb-launched-download-all-signed"
+                        role="menuitem"
+                      >
+                        <img src="../../src/assets/icons/download-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                        Télécharger tous les BIA signés
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="cb-manual-launched__tabbar" aria-label="Filtrer les bailleurs">
+              <div class="cb-manual-launched__tab cb-manual-launched__tab--active">
+                <span class="cb-manual-launched__tab-label">Toutes</span>
+                <span class="cb-manual-launched__badge cb-manual-launched__badge--brand" id="cb-manual-launched-tab-all">0</span>
+              </div>
+              <div class="cb-manual-launched__tab">
+                <span class="cb-manual-launched__tab-label">Signées</span>
+                <span class="cb-manual-launched__badge" id="cb-manual-launched-tab-signed">0</span>
+              </div>
+              <div class="cb-manual-launched__tab">
+                <span class="cb-manual-launched__tab-label">En attente</span>
+                <span class="cb-manual-launched__badge" id="cb-manual-launched-tab-pending">0</span>
+              </div>
+            </div>
+
+            <div class="cb-manual-screen__list">
+              <div class="cb-manual-screen__search" role="search">
+                <span class="cb-manual-screen__search-label">Rechercher par bailleur, locataire ou lot</span>
+                <img
+                  class="cb-manual-screen__search-icon"
+                  src="../../src/assets/icons/search-16.svg"
+                  width="16"
+                  height="16"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
+
+              <div class="cb-manual-screen__table-wrap">
+                <div class="cb-manual-table-card">
+                  <div class="cb-manual-table-card__shell cb-manual-table-card__shell--launched">
+                    <div class="cb-manual-launched-table-scroll">
+                      <table class="ds-table cb-manual-table-card__table cb-manual-launched-table">
+                        <thead>
+                          <tr>
+                            <th class="ds-table__th ds-table__th--checkbox" scope="col">
+                              <input
+                                type="checkbox"
+                                class="ds-table__checkbox"
+                                id="cb-manual-launched-select-all"
+                                aria-label="Tout sélectionner"
+                              />
+                            </th>
+                            <th class="ds-table__th" scope="col">Bailleur</th>
+                            <th class="ds-table__th" scope="col">SCI</th>
+                            <th class="ds-table__th" scope="col">Email</th>
+                            <th class="ds-table__th" scope="col">Adresse du lot</th>
+                            <th class="ds-table__th" scope="col">Statut de la signature</th>
+                            <th class="ds-table__th ds-table__th--action" scope="col"><span class="visually-hidden">Actions</span></th>
+                          </tr>
+                        </thead>
+                        <tbody id="cb-manual-launched-tbody"></tbody>
+                      </table>
+                    </div>
+
+                    <div class="cb-manual-table-card__summary" aria-live="polite">
+                      <p class="cb-manual-screen__count" id="cb-manual-launched-count">
+                        Nombre total de bailleurs&nbsp;: 0
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- ActionBar sélection bailleurs · Figma **3819:18451** · DS **860:2238** -->
+      <div
+        id="cb-manual-action-bar"
+        class="ds-action-bar cb-manual-action-bar"
+        role="region"
+        aria-label="Actions sur la sélection"
+        aria-live="polite"
+        data-node-id="3819:18451"
+        hidden
+      >
+        <div class="ds-action-bar__actions">
+          <div class="ds-action-bar__actions-left">
+            <button
+              type="button"
+              class="ds-action-bar__btn ds-action-bar__btn--danger"
+              id="cb-manual-action-delete"
+            >
+              <span class="ds-action-bar__btn-icon" aria-hidden="true">
+                <img src="../../src/assets/icons/x-16.svg" width="16" height="16" alt="" />
+              </span>
+              <span class="ds-action-bar__btn-label" id="cb-manual-action-delete-label">Supprimer les bailleurs</span>
+            </button>
+          </div>
+          <button type="button" class="ds-action-bar__btn" id="cb-manual-action-cancel">Annuler</button>
+        </div>
+      </div>
+
+      <!-- Snackbar téléchargement BIA · Figma **3819:18898** -->
+      <div
+        id="cb-manual-download-snackbar"
+        class="ds-snackbar ds-snackbar--success cb-manual-download-snackbar"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        hidden
+        aria-hidden="true"
+      >
+        <div class="ds-snackbar__accent" aria-hidden="true">
+          <img
+            class="ds-snackbar__accent-icon"
+            src="../../src/assets/icons/check-circle-24.svg"
+            width="24"
+            height="24"
+            alt=""
+          />
+        </div>
+        <div class="ds-snackbar__main">
+          <div class="ds-snackbar__text">
+            <p class="ds-snackbar__title">Téléchargement BIA</p>
+            <p class="ds-snackbar__message">Le téléchargement est en cours…</p>
+          </div>
+          <button type="button" class="ds-snackbar__dismiss" id="cb-manual-download-snackbar-dismiss" aria-label="Fermer la notification">
+            <img src="../../src/assets/icons/x-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Snackbar succès lancement · Figma **3886:495998** (entrée / sortie vers la droite, auto-fermeture) -->
+      <div
+        id="cb-manual-launch-snackbar"
+        class="ds-snackbar ds-snackbar--success cb-manual-launch-snackbar"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        hidden
+        aria-hidden="true"
+      >
+        <div class="ds-snackbar__accent" aria-hidden="true">
+          <img
+            class="ds-snackbar__accent-icon"
+            src="../../src/assets/icons/check-circle-24.svg"
+            width="24"
+            height="24"
+            alt=""
+          />
+        </div>
+        <div class="ds-snackbar__main">
+          <div class="ds-snackbar__text">
+            <p class="ds-snackbar__title" id="cb-manual-launch-snackbar-title">Campagne est lancée</p>
+            <button type="button" class="ds-snackbar__link" id="cb-manual-launch-snackbar-link">Voir la campagne</button>
+          </div>
+          <button type="button" class="ds-snackbar__dismiss" id="cb-manual-launch-snackbar-dismiss" aria-label="Fermer la notification">
+            <img src="../../src/assets/icons/x-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flow Figma · choix source **3819:17515** · étape formulaire **3819:17237** (écran **3819:17125**) · import fichier (legacy) **3819:17653** -->
+    <div id="dialog-nouvelle-campagne" class="cb-modal" hidden>
+      <button type="button" class="cb-modal__backdrop" tabindex="-1" aria-label="Fermer"></button>
+      <div
+        class="cb-modal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cb-modal-title"
+      >
+        <header class="cb-modal__header">
+          <h2 id="cb-modal-title" class="cb-modal__title">Création campagne de BIA</h2>
+          <button type="button" class="cb-modal__close" id="cb-modal-close" aria-label="Fermer la fenêtre">
+            <img src="../../src/assets/icons/x-24.svg" width="24" height="24" alt="" aria-hidden="true" />
+          </button>
+          <hr class="cb-modal__header-divider" />
+        </header>
+        <div class="cb-modal__body">
+          <div class="ds-progress-bar cb-modal__progress" aria-hidden="true">
+            <p class="ds-progress-bar__label" id="cb-progress-label">Étape 1 sur 2</p>
+            <div class="ds-progress-bar__tracks">
+              <span class="ds-progress-bar__segment is-filled"></span>
+              <span class="ds-progress-bar__segment"></span>
+            </div>
+          </div>
+          <div id="cb-wizard-step1" class="cb-modal__step-panel">
+          <p class="cb-modal__intro" id="cb-intro-step1">
+            Veuillez choisir une option ci-dessous pour générer la liste des bailleurs que vous souhaitez inclure dans votre
+            campagne&nbsp;:
+          </p>
+          <fieldset class="cb-modal__fieldset" id="cb-fieldset-sources">
+            <legend class="visually-hidden">Mode de génération de la liste des bailleurs</legend>
+            <label class="ds-combo-box">
+              <input type="radio" name="cb-campagne-source" value="gli" class="ds-combo-box__input" />
+              <span class="ds-combo-box__surface">
+                <span class="ds-combo-box__control">
+                  <span class="ds-radio" aria-hidden="true"></span>
+                  <span class="ds-combo-box__title">Importer les bailleurs liés à mes lots couverts en GLI</span>
+                </span>
+                <span class="ds-combo-box__icon-slot" aria-hidden="true"></span>
+              </span>
+            </label>
+            <label class="ds-combo-box">
+              <input type="radio" name="cb-campagne-source" value="fichier" class="ds-combo-box__input" />
+              <span class="ds-combo-box__surface">
+                <span class="ds-combo-box__control">
+                  <span class="ds-radio" aria-hidden="true"></span>
+                  <span class="ds-combo-box__title">Importer les bailleurs à partir d’un fichier</span>
+                </span>
+                <span class="ds-combo-box__icon-slot" aria-hidden="true"></span>
+              </span>
+            </label>
+            <label class="ds-combo-box">
+              <input type="radio" name="cb-campagne-source" value="manuel" class="ds-combo-box__input" />
+              <span class="ds-combo-box__surface">
+                <span class="ds-combo-box__control">
+                  <span class="ds-radio" aria-hidden="true"></span>
+                  <span class="ds-combo-box__title">Saisir les bailleurs manuellement sans import</span>
+                </span>
+                <span class="ds-combo-box__icon-slot" aria-hidden="true"></span>
+              </span>
+            </label>
+          </fieldset>
+
+          <div id="cb-upload-wrap" class="cb-modal__upload-wrap" hidden>
+            <div
+              class="ds-file-upload"
+              id="cb-file-upload-root"
+              data-default-title="Liste bailleurs (fichier)"
+            >
+              <input
+                type="file"
+                id="cb-field-fichier"
+                class="ds-file-upload__input"
+                accept=".csv,.xlsx,.xls,.ods"
+                aria-label="Fichier des bailleurs à importer"
+              />
+              <div class="ds-file-upload__inner">
+                <div class="ds-file-upload__content">
+                  <div class="ds-file-upload__left">
+                    <div class="ds-file-upload__icon-wrap">
+                      <img src="../../src/assets/icons/file-text-24.svg" width="24" height="24" alt="" />
+                    </div>
+                    <div class="ds-file-upload__text">
+                      <div class="ds-file-upload__title-row">
+                        <p class="ds-file-upload__title" id="cb-upload-doc-title">Liste bailleurs (fichier)</p>
+                        <span class="ds-file-upload__badge" id="cb-upload-file-badge" hidden aria-hidden="true">1</span>
+                      </div>
+                      <div class="ds-file-upload__help">
+                        <img src="../../src/assets/icons/info-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                        <span class="ds-file-upload__help-link" tabindex="0">Formats acceptés&nbsp;: CSV, Excel.</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ds-file-upload__right">
+                    <button type="button" class="ds-file-upload__browse" id="cb-upload-browse-btn" aria-controls="cb-field-fichier">
+                      <svg
+                        class="ds-file-upload__browse-icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10"
+                          stroke="currentColor"
+                          stroke-width="1.33"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M11.3337 5.33333L8.00033 2L4.66699 5.33333"
+                          stroke="currentColor"
+                          stroke-width="1.33"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path d="M8 2V10" stroke="currentColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      Parcourir
+                    </button>
+                    <span class="ds-file-upload__sep" id="cb-upload-action-sep" hidden aria-hidden="true"></span>
+                    <button
+                      type="button"
+                      class="ds-file-upload__chevron"
+                      id="cb-upload-chevron-btn"
+                      hidden
+                      aria-expanded="true"
+                      aria-controls="cb-upload-file-panel"
+                      aria-label="Réduire ou afficher le fichier joint"
+                    >
+                      <img
+                        class="ds-file-upload__chevron-img"
+                        id="cb-upload-chevron-up"
+                        src="../../src/assets/icons/chevron-up-16.svg"
+                        width="16"
+                        height="16"
+                        alt=""
+                        hidden
+                      />
+                      <img
+                        class="ds-file-upload__chevron-img"
+                        id="cb-upload-chevron-down"
+                        src="../../src/assets/icons/chevron-down-16.svg"
+                        width="16"
+                        height="16"
+                        alt=""
+                        hidden
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="ds-file-upload__file-panel" id="cb-upload-file-panel" hidden>
+                  <div class="ds-file-upload__file-row">
+                    <div class="ds-file-upload__file-info">
+                      <img src="../../src/assets/icons/paperclip-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                      <p class="ds-file-upload__file-meta" id="cb-upload-file-meta">
+                        <span class="ds-file-upload__file-name" id="cb-upload-file-name-display"></span>
+                        <span aria-hidden="true"> • </span>
+                        <span class="ds-file-upload__file-size" id="cb-upload-file-size-display"></span>
+                      </p>
+                    </div>
+                    <div class="ds-file-upload__file-actions">
+                      <button type="button" class="ds-file-upload__file-action-btn" aria-label="Aperçu du fichier">
+                        <img src="../../src/assets/icons/eye-16.svg" width="16" height="16" alt="" />
+                      </button>
+                      <button type="button" class="ds-file-upload__file-action-btn" id="cb-upload-remove-btn" aria-label="Retirer le fichier">
+                        <img src="../../src/assets/icons/x-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div id="cb-form-step-wrap" class="cb-modal__step-panel" hidden>
+            <p class="cb-modal__intro" id="cb-intro-step2">
+              Veuillez renseigner les informations ci-dessous pour créer une campagne de signature de BIA&nbsp;:
+            </p>
+            <div class="cb-modal__form">
+              <div class="ds-update-field-group">
+                <div class="ds-update-label-row">
+                  <label class="ds-update-label" for="cb-field-nom-campagne">Nom de la campagne</label>
+                </div>
+                <input
+                  type="text"
+                  class="ds-update-field-input"
+                  id="cb-field-nom-campagne"
+                  name="cb-nom-campagne"
+                  placeholder="Ex : Campagne de BIA n°2"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="ds-update-field-group">
+                <div class="ds-update-label-row">
+                  <span class="ds-update-label" id="cb-label-contrat">Choix du contrat cadre</span>
+                </div>
+                <div class="cb-modal__combo" id="cb-contrat-combo">
+                  <button
+                    type="button"
+                    class="cb-modal__pseudo-field"
+                    id="cb-field-contrat"
+                    aria-labelledby="cb-label-contrat"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    aria-controls="cb-field-contrat-listbox"
+                  >
+                    <img src="../../src/assets/icons/folder-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                    <span
+                      class="cb-modal__pseudo-field-text"
+                      id="cb-field-contrat-display"
+                      data-placeholder="Sélectionner un contrat cadre"
+                    >Sélectionner un contrat cadre</span>
+                    <img
+                      class="cb-modal__pseudo-field-chevron"
+                      src="../../src/assets/icons/chevron-down-16.svg"
+                      width="16"
+                      height="16"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
+                  <ul
+                    id="cb-field-contrat-listbox"
+                    class="cb-modal__dropdown-panel"
+                    role="listbox"
+                    aria-labelledby="cb-label-contrat"
+                    hidden
+                  >
+                    <li
+                      role="option"
+                      tabindex="-1"
+                      class="cb-modal__dropdown-option"
+                      id="cb-field-contrat-opt-1"
+                      data-value="Contrat cadre n°1234"
+                    >
+                      Contrat cadre n°1234
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ds-update-field-group">
+                <div class="ds-update-label-row">
+                  <span class="ds-update-label" id="cb-label-produit">Choix du produit</span>
+                </div>
+                <div class="cb-modal__combo" id="cb-produit-combo">
+                  <button
+                    type="button"
+                    class="cb-modal__pseudo-field"
+                    id="cb-field-produit"
+                    aria-labelledby="cb-label-produit"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    aria-controls="cb-field-produit-listbox"
+                  >
+                    <img src="../../src/assets/icons/file-text-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                    <span
+                      class="cb-modal__pseudo-field-text"
+                      id="cb-field-produit-display"
+                      data-placeholder="Sélectionner un produit"
+                    >Sélectionner un produit</span>
+                    <img
+                      class="cb-modal__pseudo-field-chevron"
+                      src="../../src/assets/icons/chevron-down-16.svg"
+                      width="16"
+                      height="16"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
+                  <ul
+                    id="cb-field-produit-listbox"
+                    class="cb-modal__dropdown-panel"
+                    role="listbox"
+                    aria-labelledby="cb-label-produit"
+                    hidden
+                  >
+                    <li
+                      role="option"
+                      tabindex="-1"
+                      class="cb-modal__dropdown-option"
+                      id="cb-field-produit-opt-1"
+                      data-value="GLI - Seyna - Habitation - LI+DI+PJ+SA"
+                    >
+                      GLI - Seyna - Habitation - LI+DI+PJ+SA
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ds-update-field-group">
+                <div class="ds-update-label-row">
+                  <label class="ds-update-label" for="cb-field-taux">Choix du taux</label>
+                </div>
+                <div class="cb-modal__field-with-helper">
+                  <div class="cb-modal__pseudo-field cb-modal__pseudo-field--textlike">
+                    <img src="../../src/assets/icons/tag-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                    <input
+                      type="text"
+                      class="cb-modal__pseudo-field-input"
+                      id="cb-field-taux"
+                      name="cb-taux"
+                      placeholder="Inscrire un taux"
+                      inputmode="decimal"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <p class="cb-modal__field-helper">
+                    Celui-ci représente le taux auquel vous allez facturer le bailleur.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="cb-modal__footer">
+          <div class="cb-modal__footer-inner">
+            <button type="button" class="ds-btn ds-btn--neutral-filled" id="cb-btn-cancel">Annuler</button>
+            <button type="button" class="ds-btn ds-btn--brand-filled" id="cb-btn-next">Suivant</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Confirmation « Lancer la campagne » · Figma **3819:18196** (frame **3819:18083**) -->
+    <div id="dialog-lancer-campagne" class="cb-modal cb-modal--lancer" hidden>
+      <button type="button" class="cb-modal__backdrop" tabindex="-1" aria-label="Fermer"></button>
+      <div
+        class="cb-modal__panel cb-modal__panel--lancer"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cb-lancer-modal-title"
+      >
+        <header class="cb-modal__header">
+          <h2 id="cb-lancer-modal-title" class="cb-modal__title">Lancer la campagne</h2>
+          <button type="button" class="cb-modal__close" id="cb-lancer-modal-close" aria-label="Fermer la fenêtre">
+            <img src="../../src/assets/icons/x-24.svg" width="24" height="24" alt="" aria-hidden="true" />
+          </button>
+          <hr class="cb-modal__header-divider" />
+        </header>
+        <div class="cb-modal__body cb-modal__body--lancer">
+          <div class="ds-modal-empty-state" data-node-id="3819:18212">
+            <div class="ds-modal-empty-state__visual" aria-hidden="true">
+              <img
+                class="ds-modal-empty-state__illustration"
+                src="../../src/assets/illustrations/modal-empty-state-illustration-104.png"
+                width="104"
+                height="104"
+                alt=""
+              />
+            </div>
+            <div class="ds-modal-empty-state__content">
+              <p class="ds-modal-empty-state__title">
+                Êtes-vous sûr(e) de vouloir lancer la campagne&nbsp;?
+              </p>
+              <p class="ds-modal-empty-state__description">
+                Cette action déclenchera l’envoi immédiat de la campagne à l’ensemble des bailleurs sélectionnés.
+              </p>
+            </div>
+          </div>
+          <div class="cb-lancer-modal__summary-card">
+            <p class="cb-lancer-modal__summary-heading">Résumé des informations de la campagne&nbsp;:</p>
+            <div class="cb-lancer-modal__summary-body" id="cb-lancer-modal-summary"></div>
+          </div>
+        </div>
+        <footer class="cb-modal__footer cb-modal__footer--lancer">
+          <hr class="cb-modal__footer-rule" />
+          <div class="cb-modal__footer-inner cb-modal__footer-inner--lancer">
+            <button type="button" class="ds-btn ds-btn--neutral-filled" id="cb-lancer-modal-cancel">
+              Annuler
+            </button>
+            <button type="button" class="ds-btn ds-btn--brand-filled" id="cb-lancer-modal-confirm">
+              Lancer la campagne
+            </button>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="campagne-bia-flow.js" defer></script>
+  </body>
+</html>

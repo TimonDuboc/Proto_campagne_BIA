@@ -1,0 +1,16 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="people2_pdt490_grad" x1="18" y1="0" x2="18" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BDB7FF"/>
+      <stop offset="1" stop-color="#F1EFFE"/>
+    </linearGradient>
+  </defs>
+  <circle cx="18" cy="18" r="18" fill="url(#people2_pdt490_grad)"/>
+  <g transform="translate(10.0008 10.0008)">
+    <ellipse cx="8.45559" cy="8.45559" rx="8.45559" ry="8.45559" fill="#FFFFFF"/>
+  </g>
+  <g transform="translate(13.78886 13.20605)">
+    <path d="M0 9.59814C0 7.48717 1.71128 5.77589 3.82226 5.77589H5.51282C7.6238 5.77589 9.33508 7.48717 9.33508 9.59814V10.5007H0V9.59814Z" fill="#1500F7"/>
+    <ellipse cx="4.66755" cy="2.46016" rx="2.46016" ry="2.46016" fill="#070054"/>
+  </g>
+</svg>

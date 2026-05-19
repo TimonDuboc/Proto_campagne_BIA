@@ -1,0 +1,388 @@
+/**
+ * Modale « Création campagne de BIA » — flow Figma **3819:17403** · étape formulaire **3819:17237** (écran **3819:17125**)
+ * Structure DS : **components.md** section Modal (**10551:10187**).
+ */
+
+.cb-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-medium-4) var(--space-medium-2);
+  overflow-y: auto;
+}
+
+.cb-modal[hidden] {
+  display: none;
+}
+
+.cb-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 0, 84, 0.8) 0%,
+    rgba(11, 0, 125, 0.8) 100%
+  );
+  backdrop-filter: blur(2px);
+}
+
+.cb-modal__panel {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 660px;
+  margin: var(--space-large-2) auto;
+  padding: var(--space-large-1);
+  border-radius: var(--radius-medium);
+  background: var(--color-module, #ffffff);
+  box-shadow: var(--shadow-modal, 0 0 1px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04), 0 0 24px rgba(0, 0, 0, 0.04),
+    0 0 32px rgba(0, 0, 0, 0.04));
+}
+
+.cb-modal__header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: start;
+  gap: 0 var(--space-medium-2);
+  margin-bottom: var(--space-medium-4);
+}
+
+.cb-modal__title {
+  margin: 0;
+  grid-column: 1;
+  grid-row: 1;
+  font-family: var(--font-family);
+  font-size: var(--font-size-display);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text-module-title, #0b007d);
+}
+
+.cb-modal__close {
+  grid-column: 2;
+  grid-row: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--radius-small);
+}
+
+.cb-modal__close:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.cb-modal__close img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.cb-modal__header-divider {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  height: 1px;
+  margin: 0;
+  margin-top: var(--space-medium-4);
+  border: none;
+  background: var(--color-neutral-300, #e2e2e2);
+}
+
+.cb-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium-4);
+  margin-bottom: var(--space-medium-4);
+}
+
+.cb-modal__step-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium-4);
+}
+
+.cb-modal__step-panel[hidden] {
+  display: none;
+}
+
+.cb-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium-3);
+  width: 100%;
+}
+
+/* Champs type « Update field » (aligné Proto bailleur / Figma Field) */
+.cb-modal .ds-update-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-small-3);
+  width: 100%;
+}
+
+.cb-modal .ds-update-label-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 16px;
+  width: 100%;
+}
+
+.cb-modal .ds-update-label {
+  font-size: var(--font-size-body-s);
+  font-weight: 400;
+  line-height: var(--line-height-s);
+  color: var(--color-text-neutral-standard);
+}
+
+.cb-modal .ds-update-field-input {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 9px var(--space-medium-1);
+  min-height: 40px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-body-s);
+  font-weight: 400;
+  line-height: var(--line-height-l);
+  color: var(--color-text-brand-strong);
+  background: var(--color-module);
+  border: 1px solid var(--color-border-neutral-standard);
+  border-radius: var(--radius-medium);
+}
+
+.cb-modal .ds-update-field-input:focus {
+  outline: none;
+  border-color: var(--color-link-default);
+  box-shadow: var(--focus-ring);
+}
+
+.cb-modal .ds-update-field-input::placeholder {
+  color: var(--color-text-neutral-weak);
+}
+
+.cb-modal__pseudo-field {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 9px var(--space-medium-1);
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-small-3);
+  font-family: var(--font-family);
+  font-size: var(--font-size-body-s);
+  font-weight: 400;
+  line-height: var(--line-height-l);
+  text-align: left;
+  color: var(--color-text-neutral-weak);
+  background: var(--color-module);
+  border: 1px solid var(--color-border-neutral-standard);
+  border-radius: var(--radius-medium);
+  cursor: pointer;
+}
+
+.cb-modal__pseudo-field:hover {
+  border-color: var(--color-border-neutral-strong);
+}
+
+.cb-modal__pseudo-field:focus-visible {
+  outline: none;
+  border-color: var(--color-link-default);
+  box-shadow: var(--focus-ring);
+}
+
+.cb-modal__combo {
+  position: relative;
+  width: 100%;
+}
+
+.cb-modal__dropdown-panel {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  top: calc(100% + 4px);
+  margin: 0;
+  padding: var(--space-small-3) 0;
+  list-style: none;
+  background: var(--color-module);
+  border: 1px solid var(--color-border-neutral-standard);
+  border-radius: var(--radius-medium);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cb-modal__dropdown-panel[hidden] {
+  display: none;
+}
+
+.cb-modal__dropdown-option {
+  padding: 10px var(--space-medium-1);
+  font-size: var(--font-size-body-s);
+  line-height: var(--line-height-l);
+  color: var(--color-text-neutral-standard);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.cb-modal__dropdown-option:hover,
+.cb-modal__dropdown-option:focus {
+  outline: none;
+  background: var(--color-neutral-100);
+}
+
+.cb-modal__pseudo-field-chevron {
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.cb-modal__pseudo-field[aria-expanded="true"] .cb-modal__pseudo-field-chevron {
+  transform: rotate(180deg);
+}
+
+.cb-modal__pseudo-field-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+}
+
+.cb-modal__pseudo-field--has-value .cb-modal__pseudo-field-text {
+  color: var(--color-text-brand-strong);
+  overflow-wrap: anywhere;
+}
+
+.cb-modal__pseudo-field--textlike {
+  cursor: text;
+  gap: var(--space-small-3);
+}
+
+.cb-modal__pseudo-field--textlike:focus-within {
+  border-color: var(--color-link-default);
+  box-shadow: var(--focus-ring);
+}
+
+.cb-modal__pseudo-field-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  line-height: var(--line-height-l);
+  color: var(--color-text-brand-strong);
+  background: transparent;
+}
+
+.cb-modal__pseudo-field-input::placeholder {
+  color: var(--color-text-neutral-weak);
+}
+
+.cb-modal__pseudo-field-input:focus {
+  outline: none;
+}
+
+.cb-modal__field-with-helper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.cb-modal__field-helper {
+  margin: 0;
+  font-size: var(--font-size-caption);
+  font-weight: 400;
+  line-height: var(--line-height-xs);
+  color: var(--color-text-neutral-weak);
+}
+
+.cb-modal .ds-progress-bar {
+  width: 239px;
+  max-width: 100%;
+}
+
+.cb-modal__intro {
+  margin: 0;
+  font-size: var(--font-size-body-s);
+  font-weight: 400;
+  line-height: var(--line-height-m);
+  color: var(--color-text-neutral-standard, #404043);
+}
+
+.cb-modal__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium-2);
+}
+
+.cb-modal__fieldset[disabled] .ds-combo-box {
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.cb-modal__upload-wrap {
+  margin-top: var(--space-small-3);
+}
+
+.cb-modal__step-panel > .cb-modal__upload-wrap {
+  margin-top: 0;
+}
+
+.cb-modal__upload-wrap[hidden] {
+  display: none;
+}
+
+.cb-modal__footer {
+  padding-top: var(--space-large-1);
+  border-top: 1px solid var(--color-neutral-300, #e2e2e2);
+}
+
+.cb-modal__footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-medium-2);
+}
+
+.cb-modal__footer-inner #cb-btn-next {
+  margin-left: auto;
+}
+
+.cb-modal__footer .ds-btn {
+  min-height: 40px;
+  padding: 0 var(--space-medium-1);
+}
+
+/* Figma **3819:17263** — CTA désactivé (primary-200 + texte inverse weak) */
+.cb-modal__footer .ds-btn--brand-filled:disabled {
+  background: var(--color-primary-200);
+  color: var(--color-bg-inverse-weak);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.cb-modal__footer .ds-btn--brand-filled:disabled:hover {
+  background: var(--color-primary-200);
+  filter: none;
+}

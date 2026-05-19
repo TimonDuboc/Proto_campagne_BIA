@@ -1,0 +1,86 @@
+/**
+ * Design System — Dropdown-content
+ * Figma **798:2105** · variantes **798:1640** (List), **15843:3886** (List-Icons)
+ * Item **798:301** (dropdown-item)
+ *
+ * Menu contextuel ancré à un déclencheur (bouton icône, etc.).
+ * Dépend des tokens : `--color-module`, `--radius-medium`, `--space-*`, `--font-*`, `--shadow-modal`.
+ */
+
+.ds-dropdown-content {
+  box-sizing: border-box;
+  z-index: 400;
+  min-width: 216px;
+  padding: 4px;
+  border-radius: var(--radius-medium, 4px);
+  background: var(--color-module, #ffffff);
+  box-shadow:
+    0 0 0.5px rgba(0, 0, 0, 0.04),
+    0 4px 4px rgba(0, 0, 0, 0.04),
+    0 0 12px rgba(0, 0, 0, 0.04),
+    0 0 16px rgba(0, 0, 0, 0.04);
+}
+
+.ds-dropdown-content[hidden] {
+  display: none !important;
+}
+
+.ds-dropdown-content__list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  border-radius: var(--radius-medium, 4px);
+}
+
+.ds-dropdown-content__item {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--space-small-3, 8px);
+  width: 100%;
+  min-height: 33px;
+  margin: 0;
+  padding: 4px 12px 4px 8px;
+  border: none;
+  border-radius: 0;
+  background: var(--color-module, #ffffff);
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-s, 14px);
+  font-weight: 400;
+  line-height: var(--line-height-s, 22px);
+  color: var(--color-text-neutral-weak, #878787);
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.ds-dropdown-content__item img {
+  display: block;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.ds-dropdown-content__item:hover,
+.ds-dropdown-content__item:focus-visible {
+  background: var(--color-neutral-100, #fbfbfb);
+  color: var(--color-text-neutral-standard, #404043);
+  outline: none;
+}
+
+.ds-dropdown-content__item:disabled,
+.ds-dropdown-content__item[aria-disabled="true"] {
+  color: var(--color-neutral-400, #cbcbcb);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ds-dropdown-content__item:disabled:hover,
+.ds-dropdown-content__item[aria-disabled="true"]:hover {
+  background: var(--color-module, #ffffff);
+  color: var(--color-neutral-400, #cbcbcb);
+}

@@ -1,0 +1,92 @@
+/**
+ * Combo box — spécification flow produit PDT-512
+ * Figma : PNx45tC1Ibn3Kw6BDqjWh1 — Content 4591:5767 (instances ComboBox 4591:5768 / 4591:5769)
+ * Composant library : Design System ComboBox (réf. 1184:5754)
+ */
+
+:root {
+  --color-border-brand-strong: #0b007d;
+}
+
+/* ——— Combo box (PDT-512) ——— */
+.ds-combo-box {
+  position: relative;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.ds-combo-box__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+/* Une rangée : [radio · libellé] · 4px · slot 16×16 (réservé, ex. info) */
+.ds-combo-box__surface {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-small-2);
+  padding: var(--space-medium-2);
+  border: 1px solid var(--color-border-neutral-standard);
+  border-radius: var(--radius-small);
+  background: var(--color-module);
+  transition: border-color 0.15s ease;
+}
+
+.ds-combo-box:has(.ds-combo-box__input:checked) .ds-combo-box__surface {
+  border-color: var(--color-border-brand-strong);
+}
+
+.ds-combo-box__input:focus-visible + .ds-combo-box__surface {
+  box-shadow: var(--focus-ring);
+}
+
+.ds-combo-box__control {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small-3);
+  flex: 1;
+  min-width: 0;
+}
+
+/* Radio 16px */
+.ds-radio {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 100px;
+  border: 1px solid var(--color-border-neutral-strong);
+  background: var(--color-module);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.ds-combo-box:has(.ds-combo-box__input:checked) .ds-radio {
+  border-color: var(--color-text-brand-standard);
+  background: var(--color-bg-brand-standard);
+}
+
+/* Défaut : text/neutral/weak — sélection : text/brand/strong (#0b007d) */
+.ds-combo-box__title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body-s);
+  font-weight: 400;
+  line-height: var(--line-height-s);
+  color: var(--color-text-neutral-weak);
+  transition: color 0.15s ease;
+}
+
+.ds-combo-box:has(.ds-combo-box__input:checked) .ds-combo-box__title {
+  color: var(--color-text-module-title);
+}
+
+/* Emplacement 16×16 (vide dans PDT-512 ; alignement Figma « Size=16 ») */
+.ds-combo-box__icon-slot {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}

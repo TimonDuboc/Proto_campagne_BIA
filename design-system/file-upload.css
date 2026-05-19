@@ -1,0 +1,370 @@
+/**
+ * Design System — Upload components (zone document + Parcourir)
+ * Figma : Upload_components 8039:9325
+ *   · vide : Default Empty 8004:8488
+ *   · fichier, panneau fermé : 11619:2409
+ *   · fichier, Open=True (rangée fichier + chevron haut) : 8028:1766
+ * File 6H039ekCchRzRPW2MNPq3V
+ */
+
+.ds-file-upload {
+  --ds-upload-border: var(--color-primary-200, #bdb7ff);
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 656px;
+  padding: var(--space-medium-4, 24px);
+  border: 1px dashed var(--ds-upload-border);
+  border-radius: var(--radius-medium, 4px);
+  background: var(--color-module, #ffffff);
+  transition: border-color 0.15s ease, background 0.15s ease, border-style 0.15s ease;
+}
+
+.ds-file-upload--has-file {
+  border-style: solid;
+}
+
+.ds-file-upload--drag {
+  background: var(--color-background-info-weak, #f9f9ff);
+  border-color: var(--color-border-info-strong, #1500f7);
+}
+
+.ds-file-upload__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Colonne titre + rangée fichier (gap 24px quand fichier présent — 8028:1766) */
+.ds-file-upload__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.ds-file-upload--has-file .ds-file-upload__inner {
+  gap: var(--space-medium-4, 24px);
+}
+
+.ds-file-upload--has-file.ds-file-upload--panel-collapsed .ds-file-upload__inner {
+  gap: 0;
+}
+
+.ds-file-upload__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-medium-2, 16px);
+  width: 100%;
+  min-width: 0;
+}
+
+.ds-file-upload__left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-medium-2, 16px);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ds-file-upload__icon-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-small-3, 8px);
+  border-radius: var(--radius-medium, 4px);
+  background: var(--color-background-info-weak, #f9f9ff);
+}
+
+.ds-file-upload__icon-wrap img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.ds-file-upload__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-small-3, 8px);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ds-file-upload__title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-small-3, 8px);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Libellé type de pièce (ex. « État des lieux ») — ne pas remplacer par le nom du fichier */
+.ds-file-upload__title {
+  margin: 0;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-s, 14px);
+  font-weight: 700;
+  line-height: var(--line-height-s, 22px);
+  color: var(--color-text-module-title, #0b007d);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* Badge numéro (état fichier sélectionné, DS) */
+.ds-file-upload__badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  padding: var(--space-small-2, 4px);
+  border-radius: var(--radius-small, 2px);
+  background: var(--color-neutral-200, #f4f6f9);
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-neutral-weak, #878787);
+}
+
+.ds-file-upload__badge[hidden] {
+  display: none;
+}
+
+.ds-file-upload__help {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-small-2, 4px);
+}
+
+.ds-file-upload__help img {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.ds-file-upload__help-link {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-border-info-strong, #1500f7);
+  text-decoration: underline;
+  text-underline-position: from-font;
+  text-align: left;
+}
+
+.ds-file-upload__help-link:hover {
+  color: var(--color-text-brand-standard, #0f00b8);
+}
+
+.ds-file-upload__help-link:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(21, 0, 247, 0.25));
+  border-radius: 2px;
+}
+
+.ds-file-upload__right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-medium-2, 16px);
+  flex-shrink: 0;
+}
+
+.ds-file-upload__browse {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-small-2, 4px);
+  height: 32px;
+  padding: var(--space-small-3, 8px);
+  box-sizing: border-box;
+  border: 1px solid var(--color-text-brand-standard, #0f00b8);
+  border-radius: var(--radius-small, 2px);
+  background: var(--color-module, #ffffff);
+  cursor: pointer;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-s, 14px);
+  font-weight: 400;
+  line-height: var(--line-height-s, 22px);
+  color: var(--color-text-brand-standard, #0f00b8);
+}
+
+.ds-file-upload__browse:hover {
+  background: var(--color-background-info-weak, #f9f9ff);
+}
+
+.ds-file-upload__browse:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(21, 0, 247, 0.25));
+}
+
+.ds-file-upload__browse-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.ds-file-upload__sep {
+  width: 1px;
+  height: 32px;
+  background: var(--color-neutral-300, #e2e2e2);
+  flex-shrink: 0;
+}
+
+.ds-file-upload__sep[hidden] {
+  display: none;
+}
+
+.ds-file-upload__chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--radius-small, 2px);
+}
+
+.ds-file-upload__chevron-img {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.ds-file-upload__chevron-img[hidden] {
+  display: none;
+}
+
+.ds-file-upload__chevron:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(21, 0, 247, 0.25));
+}
+
+.ds-file-upload__chevron[hidden] {
+  display: none;
+}
+
+/* ——— Rangée fichier (FileComponent, fond canvas / neutral-200) ——— */
+.ds-file-upload__file-panel[hidden] {
+  display: none !important;
+}
+
+.ds-file-upload__file-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-medium-2, 16px);
+  min-height: 56px;
+  padding: var(--space-small-3, 8px) var(--space-medium-1, 12px);
+  box-sizing: border-box;
+  border-radius: var(--radius-medium, 4px);
+  background: var(--color-neutral-200, #f4f6f9);
+  width: 100%;
+}
+
+.ds-file-upload__file-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-small-3, 8px);
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.ds-file-upload__file-info img {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.ds-file-upload__file-meta {
+  margin: 0;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--color-text-neutral-standard, #404043);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.ds-file-upload__file-name {
+  font-weight: 700;
+}
+
+.ds-file-upload__file-size {
+  font-weight: 400;
+}
+
+.ds-file-upload__file-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-medium-2, 16px);
+  flex-shrink: 0;
+}
+
+/* Button Small outlined neutre (icône seule) — DS 8028:1766 */
+.ds-file-upload__file-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: var(--space-small-3, 8px);
+  box-sizing: border-box;
+  border: 1px solid var(--color-border-neutral-standard, #e2e2e2);
+  border-radius: var(--radius-small, 2px);
+  background: var(--color-module, #ffffff);
+  cursor: pointer;
+  color: var(--color-text-neutral-standard, #404043);
+}
+
+.ds-file-upload__file-action-btn:hover {
+  background: var(--color-neutral-200, #f4f6f9);
+}
+
+.ds-file-upload__file-action-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(21, 0, 247, 0.25));
+}
+
+.ds-file-upload__file-action-btn img,
+.ds-file-upload__file-action-btn svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}

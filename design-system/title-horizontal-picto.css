@@ -1,0 +1,29 @@
+/**
+ * Design System — Pictogramme Title horizontal (slot 36×36)
+ *
+ * Figma : rangée **TitleHorizontal** · [**13020:2901**](https://www.figma.com/design/6H039ekCchRzRPW2MNPq3V/Design-System?node-id=13020-2901)
+ * Composant **Application** dans le DS : cercle **36×36**, fond **`color/primary/100`**, picto métier **32×32** centré (ex. **application-32.svg**).
+ *
+ * Voir **Title horizontal** · `components.md` · node **4058:17302** (picto 36×36, `spacing/medium-1` avant le texte).
+ *
+ * Dépend des tokens : `--color-primary-100`, évent. `--color-module` si fond alternatif.
+ */
+
+.ds-title-horizontal-picto {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary-100, #f1effe);
+  overflow: hidden;
+}
+
+.ds-title-horizontal-picto img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}

@@ -1,0 +1,20 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- PDT-490 sidebar picto 4156:46483 / Application 935:2236; white paper on primary-100 circle via CSS -->
+  <path d="M5 25L3 27H5V25Z" fill="#FFFFFF" />
+  <circle cx="3" cy="25" r="2" fill="#070054" />
+  <path
+    d="M1 7C1 5.89543 1.89543 5 3 5H15L17 8.13043H29C30.1046 8.13043 31 9.02587 31 10.1304V27C31 28.1046 30.1046 29 29 29H3C1.89543 29 1 28.1046 1 27V7Z"
+    fill="#070054"
+  />
+  <path
+    d="M5 14C5 12.8954 5.89543 12 7 12H29C30.1046 12 31 12.8954 31 14V27C31 28.1046 30.1046 29 29 29H5V14Z"
+    fill="#FFFFFF"
+  />
+  <path
+    d="M26.5 12.5V24.0654L24.2773 22.584L24 22.3994L23.7227 22.584L21.5 24.0654V12.5H26.5Z"
+    fill="#1500F7"
+    stroke="#1500F7"
+  />
+  <rect x="3" y="27" width="2" height="2" fill="#FFFFFF" />
+  <path d="M3 29C4.10457 29 5 28.1046 5 27H3V29Z" fill="#070054" />
+</svg>

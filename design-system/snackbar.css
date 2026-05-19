@@ -1,0 +1,229 @@
+/**
+ * Design System — Snackbar
+ *
+ * Composant : Figma **4058:16549** · fichier `6H039ekCchRzRPW2MNPq3V`
+ * Usage PDT-512 liste bailleurs : **4591:5544** · fichier `PNx45tC1Ibn3Kw6BDqjWh1`
+ * Pile titre / message / lien : frame **Text** · Figma **`1151:11624`** — `gap` **`spacing/medium-1` (12px)**
+ *
+ * Variantes : **Success**, **Error**, **Warning**, **Info** (bandeau gauche dégradé + icône 24).
+ * Ombre : **shadow-modal** (multi couches).
+ *
+ * Dépend des tokens projet : `--color-module`, `--radius-medium`, `--space-medium-*`,
+ * `--font-family`, `--font-size-body-m`, `--font-size-body-s`, `--line-height-m`, `--line-height-s`,
+ * `--color-text-module-title`, `--color-text-caption` ou `--color-text-neutral-weak`, `--focus-ring`,
+ * `--shadow-modal` (défini côté prototype / tokens).
+ */
+
+:root {
+  /* secondary/watergreen — Figma Snackbar Success */
+  --ds-snackbar-success-800: #37c99b;
+  --ds-snackbar-success-600: #88dec3;
+  --ds-snackbar-success-200: #e1f7f0;
+  /* danger */
+  --ds-snackbar-error-strong: #bf1111;
+  --ds-snackbar-error-standard: #f44545;
+  --ds-snackbar-error-weak: #ffe9e9;
+  /* secondary/agrume — Warning */
+  --ds-snackbar-warning-800: #fc6533;
+  --ds-snackbar-warning-600: #ffa587;
+  --ds-snackbar-warning-200: #fff3ef;
+  /* primary — Info */
+  --ds-snackbar-info-800: #0e00a5;
+  --ds-snackbar-info-600: #1500f7;
+  --ds-snackbar-info-200: #bdb7ff;
+}
+
+.ds-snackbar {
+  --ds-snackbar-accent-bg: linear-gradient(
+    139.96deg,
+    var(--ds-snackbar-success-800) 5.18%,
+    var(--ds-snackbar-success-600) 62.54%,
+    var(--ds-snackbar-success-200) 119.9%
+  );
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 343px;
+  overflow: hidden;
+  border-radius: var(--radius-medium, 4px);
+  background: var(--color-module, #ffffff);
+  box-shadow: var(
+    --shadow-modal,
+    0 0 1px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 0 24px rgba(0, 0, 0, 0.04),
+    0 0 32px rgba(0, 0, 0, 0.04)
+  );
+  /* Entrée / sortie depuis la droite (ancrage coin haut-droit) */
+  opacity: 0;
+  transform: translateX(calc(100% + var(--space-large-2, 40px)));
+  transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.ds-snackbar.is-open {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.ds-snackbar[hidden] {
+  display: none !important;
+}
+
+.ds-snackbar:not([hidden]) {
+  display: flex;
+}
+
+/* ——— Bandeau couleur + icône ——— */
+.ds-snackbar__accent {
+  position: relative;
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 48px;
+  background-image: var(--ds-snackbar-accent-bg);
+}
+
+.ds-snackbar__accent-icon {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 0.5px);
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* ——— Zone texte + fermeture ——— */
+.ds-snackbar__main {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-medium-1, 12px);
+  padding: var(--space-medium-3, 20px);
+  border-radius: var(--radius-medium, 4px);
+}
+
+/* Text — Figma 1151:11624 : gap vertical medium-1 (12px) entre titre, message, lien */
+.ds-snackbar__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-medium-1, 12px);
+  flex: 1 1 auto;
+  min-width: 0;
+  /* Laisse la place au bouton fermer (16px + inset 12px) */
+  padding-right: 40px;
+}
+
+.ds-snackbar__title {
+  margin: 0;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-m, 16px);
+  font-weight: 700;
+  line-height: var(--line-height-m, 24px);
+  color: var(--color-text-module-title, #0b007d);
+}
+
+.ds-snackbar__message {
+  margin: 0;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-s, 14px);
+  font-weight: 400;
+  line-height: var(--line-height-s, 22px);
+  color: var(--color-text-caption, var(--color-text-neutral-weak, #878787));
+}
+
+/* Lien d’action (ex. PDT-512 « Voir le bailleur ») */
+.ds-snackbar__link {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-s, 14px);
+  font-weight: 400;
+  line-height: var(--line-height-s, 22px);
+  color: var(--color-text-neutral-weak, #878787);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  background: none;
+  border: none;
+  border-radius: var(--radius-small, 2px);
+  cursor: pointer;
+  text-align: left;
+}
+
+.ds-snackbar__link:hover {
+  color: var(--color-text-neutral-standard, #404043);
+}
+
+.ds-snackbar__link:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(21, 0, 247, 0.25));
+}
+
+.ds-snackbar__dismiss {
+  position: absolute;
+  top: var(--space-medium-1, 12px);
+  right: var(--space-medium-1, 12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-small, 2px);
+  cursor: pointer;
+}
+
+.ds-snackbar__dismiss img {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.ds-snackbar__dismiss:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(21, 0, 247, 0.25));
+}
+
+/* ——— Variantes (bandeau) ——— */
+.ds-snackbar--error {
+  --ds-snackbar-accent-bg: linear-gradient(
+    139.96deg,
+    var(--ds-snackbar-error-strong) 5.18%,
+    var(--ds-snackbar-error-standard) 62.54%,
+    var(--ds-snackbar-error-weak) 124.68%
+  );
+}
+
+.ds-snackbar--warning {
+  --ds-snackbar-accent-bg: linear-gradient(
+    139.96deg,
+    var(--ds-snackbar-warning-800) 5.18%,
+    var(--ds-snackbar-warning-600) 62.54%,
+    var(--ds-snackbar-warning-200) 119.9%
+  );
+}
+
+.ds-snackbar--info {
+  --ds-snackbar-accent-bg: linear-gradient(
+    139.96deg,
+    var(--ds-snackbar-info-800) 5.18%,
+    var(--ds-snackbar-info-600) 62.54%,
+    var(--ds-snackbar-info-200) 119.9%
+  );
+}
+
+/* Icônes warning / info / error dans le DS utilisent des tracés clairs sur le dégradé */
+.ds-snackbar--warning .ds-snackbar__accent-icon,
+.ds-snackbar--info .ds-snackbar__accent-icon,
+.ds-snackbar--error .ds-snackbar__accent-icon {
+  filter: brightness(0) invert(1);
+}

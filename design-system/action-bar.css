@@ -1,0 +1,105 @@
+/**
+ * Design System — ActionBar
+ * Figma **860:2238** · fichier `6H039ekCchRzRPW2MNPq3V`
+ * Usage PDT-490 liste bailleurs : **3819:18451** · fichier `kUvAJUSmDQ9i1GlsTF0qGX`
+ *
+ * Barre d’actions groupées affichée lorsqu’une ou plusieurs lignes de tableau sont sélectionnées.
+ * Dépend des tokens : `--color-module`, `--color-border-brand-standard`, `--space-*`, `--font-*`, `--focus-ring`.
+ */
+
+:root {
+  --ds-action-bar-min-height: 97px;
+}
+
+.ds-action-bar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: var(--ds-action-bar-min-height);
+  min-height: var(--ds-action-bar-min-height);
+  padding: 10px var(--space-large-1, 32px);
+  background: var(--color-module, #ffffff);
+  border-top: 2px solid var(--color-border-brand-standard, #0f00b8);
+}
+
+.ds-action-bar[hidden] {
+  display: none !important;
+}
+
+.ds-action-bar__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-medium-3, 20px);
+  width: 100%;
+}
+
+.ds-action-bar__actions-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-medium-4, 24px);
+}
+
+.ds-action-bar__btn-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds-action-bar__btn-icon img {
+  display: block;
+}
+
+.ds-action-bar__btn--danger .ds-action-bar__btn-icon img {
+  filter: brightness(0) invert(1);
+}
+
+.ds-action-bar__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-small-3, 8px);
+  min-height: 40px;
+  padding: 0 var(--space-medium-1, 12px);
+  margin: 0;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-s, 14px);
+  font-weight: 400;
+  line-height: var(--line-height-s, 22px);
+  color: var(--color-text-neutral-standard, #404043);
+  background: var(--color-module, #ffffff);
+  border: 1px solid var(--color-border-neutral-standard, #e2e2e2);
+  border-radius: var(--radius-small, 2px);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.ds-action-bar__btn:hover {
+  background: var(--color-neutral-100, #fbfbfb);
+  border-color: var(--color-border-neutral-strong, #cbcbcb);
+}
+
+.ds-action-bar__btn:focus {
+  outline: none;
+}
+
+.ds-action-bar__btn:focus-visible {
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(21, 0, 247, 0.25));
+}
+
+.ds-action-bar__btn--danger {
+  color: var(--color-text-inverse-strong, #ffffff);
+  background: var(--color-bg-danger-standard, #f44545);
+  border-color: var(--color-bg-danger-standard, #f44545);
+}
+
+.ds-action-bar__btn--danger:hover {
+  background: var(--color-bg-danger-strong, #bf1111);
+  border-color: var(--color-bg-danger-strong, #bf1111);
+}
+
+.ds-action-bar__btn--danger:focus-visible {
+  box-shadow: 0 0 0 3px rgba(244, 69, 69, 0.35);
+}

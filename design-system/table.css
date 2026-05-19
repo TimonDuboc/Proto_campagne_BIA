@@ -1,0 +1,209 @@
+/**
+ * Design System — Table (données)
+ *
+ * Réf. **components.md** section Table · en-tête **853:4644** · header label **853:4483** · ligne **68px**.
+ * Typo en-tête : **UI/TableHeader — 11px**, uppercase, tracking 8 % (via `--letter-spacing-table-header`).
+ * Tag/Dropdown cellule : **3122:10801** — variantes Green / Grey / etc.
+ * Cell/Button · icône seule : Figma **3819:17060** · Button Small outlined (**759:7165**).
+ */
+
+:root {
+  --letter-spacing-table-header: 0.08em;
+  --font-size-table-header: 11px;
+  --ds-table-row-height: 68px;
+  --ds-table-header-height: 48px;
+}
+
+.ds-table-shell {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid var(--color-border-neutral-weak, #f4f6f9);
+  border-radius: var(--radius-medium, 4px);
+  overflow: hidden;
+}
+
+.ds-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+}
+
+.ds-table thead {
+  background: var(--color-states-info-100, #f9f9ff);
+}
+
+.ds-table__th {
+  box-sizing: border-box;
+  height: var(--ds-table-header-height);
+  padding: 0 var(--space-medium-1, 12px);
+  font-size: var(--font-size-table-header, 11px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-table-header);
+  text-transform: uppercase;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: var(--color-text-brand-standard, #0f00b8);
+}
+
+.ds-table__th--checkbox {
+  width: var(--ds-table-checkbox-col, 48px);
+  padding-left: var(--space-small-3, 8px);
+  text-align: center;
+}
+
+.ds-table__th-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-small-2, 4px);
+}
+
+.ds-table__sort {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: var(--space-small-2, 4px);
+  margin: 0;
+  border: none;
+  border-radius: var(--radius-medium, 4px);
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+
+.ds-table__sort:hover {
+  background: var(--color-neutral-200, #f4f6f9);
+}
+
+.ds-table__sort:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(21, 0, 247, 0.25));
+}
+
+.ds-table__sort img {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.ds-table tbody tr {
+  background: var(--color-module, #ffffff);
+  border-bottom: 1px solid var(--color-border-neutral-weak, #f4f6f9);
+}
+
+.ds-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.ds-table__td {
+  box-sizing: border-box;
+  height: var(--ds-table-row-height);
+  padding: 0 var(--space-medium-1, 12px);
+  font-size: var(--font-size-body-s, 14px);
+  line-height: var(--line-height-s, 22px);
+  vertical-align: middle;
+  color: var(--color-text-neutral-standard, #404043);
+}
+
+.ds-table__td--checkbox {
+  width: var(--ds-table-checkbox-col, 48px);
+  padding-left: var(--space-small-3, 8px);
+  text-align: center;
+}
+
+.ds-table__td--strong {
+  font-weight: 700;
+  color: var(--color-text-brand-strong, #0b007d);
+}
+
+.ds-table__checkbox {
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border-radius: 3px;
+  border: 1px solid var(--color-border-neutral-strong, #cbcbcb);
+  background: var(--color-module, #ffffff);
+  cursor: pointer;
+  appearance: none;
+  vertical-align: middle;
+}
+
+.ds-table__checkbox:checked {
+  border-color: var(--color-bg-brand-standard, #0f00b8);
+  background: var(--color-bg-brand-standard, #0f00b8);
+}
+
+.ds-table__checkbox:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(21, 0, 247, 0.25));
+}
+
+.ds-table__tag-dropdown {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+  padding: var(--space-small-3, 8px);
+  margin: 0;
+  border: none;
+  border-radius: var(--radius-medium, 4px);
+  background: var(--color-background-success-weak, var(--color-states-success-100, #dafff3));
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-s, 14px);
+  font-weight: 400;
+  font-style: normal;
+  line-height: var(--line-height-s, 22px);
+  letter-spacing: 0;
+  color: var(--color-text-success-extra-strong, #19bd8a);
+  white-space: nowrap;
+}
+
+/* Tag/Dropdown · Color = Grey (3122:10801) — fond neutre, texte standard */
+.ds-table__tag-dropdown--grey {
+  background: var(--color-neutral-200, #f4f6f9);
+  color: var(--color-text-neutral-standard, #404043);
+}
+
+.ds-table__btn-icon {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-small-2, 4px);
+  /* Figma Button Small · h 32 + padding 8 + bordure 1 → ~34×34 px rendu */
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  min-height: 34px;
+  padding: var(--space-small-3, 8px);
+  margin: 0;
+  border: 1px solid var(--color-border-neutral-standard, #e2e2e2);
+  border-radius: var(--radius-small, 2px);
+  background-color: var(--color-neutral-white, var(--color-module, #ffffff));
+  cursor: pointer;
+}
+
+.ds-table__btn-icon:hover {
+  background-color: var(--color-neutral-100, #fbfbfb);
+}
+
+.ds-table__btn-icon:active {
+  background-color: var(--color-neutral-200, #f4f6f9);
+}
+
+.ds-table__btn-icon:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring, 0 0 0 3px rgba(21, 0, 247, 0.25));
+}
+
+.ds-table__btn-icon img {
+  display: block;
+  width: 16px;
+  height: 16px;
+}

@@ -1,0 +1,71 @@
+/**
+ * Tag / Rounded — Filled (Design System)
+ *
+ * Jeu Figma **Tag/Rounded-Filled** · **3122:10830** (`6H039ekCchRzRPW2MNPq3V`).
+ * Usage produit PDT-490 — empilement tags **4153:43778** (`kUvAJUSmDQ9i1GlsTF0qGX`) :
+ * hauteur **32px**, `padding` `spacing/small-2` / `spacing/small-3`, libellé **whitespace-nowrap** (une seule ligne).
+ * Largeur au contenu (`fit-content`) ; si l’espace horizontal manque, troncature **ellipsis** sur le libellé.
+ * Frame **Elements** : `gap` **5px** (Figma ; pas de jeton `spacing/*` à 5px dans `tokens.md`).
+ * Typo : **UI/Forms — S — Medium** (`font/size` bodySmall-1, `font/weight` medium, `font/line-height/l`).
+ *
+ * Regroupement vertical (même fichier) : **`ds-tag-rounded-filled-group`** — `gap` **12px** (`spacing/medium-1`),
+ * alignement **`flex-start`** (pas d’étirement ni centrage des pastilles sur la largeur de la colonne).
+ */
+
+.ds-tag-rounded-filled-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-medium-1, 12px);
+  max-width: 100%;
+}
+
+.ds-tag-rounded-filled {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 32px;
+  padding: var(--space-small-2, 4px) var(--space-small-3, 8px);
+  border-radius: var(--radius-full, 9999px);
+  background: var(--color-module, #ffffff);
+  border: 1px solid var(--color-border-neutral-standard, #e2e2e2);
+}
+
+.ds-tag-rounded-filled__elements {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ds-tag-rounded-filled__icon {
+  display: block;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.ds-tag-rounded-filled__label {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-family, "Heebo", system-ui, sans-serif);
+  font-size: var(--font-size-body-s, 14px);
+  font-weight: 500;
+  line-height: var(--line-height-l, 25px);
+  color: var(--color-text-neutral-standard, #404043);
+}
+
+.ds-tag-rounded-filled > .ds-tag-rounded-filled__label:only-child {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: nowrap;
+}
