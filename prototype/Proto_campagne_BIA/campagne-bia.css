@@ -517,24 +517,26 @@ body {
   color: var(--color-text-neutral-weak);
 }
 
-/* ——— Filtres (Figma FiltersBox : gap 16px, responsive via container queries) ——— */
+/* ——— Filtres (Figma FiltersBox 3819:17026 · flex une ligne, gap 16px) ——— */
 .proto-campagne__filters {
-  container-type: inline-size;
-  container-name: campagne-filters;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
   gap: var(--space-medium-2);
-  align-items: start;
+  min-width: 0;
   padding: 0 var(--space-large-2);
   margin-bottom: var(--space-medium-4);
+  overflow-x: auto;
+  scrollbar-width: thin;
 }
 
 .proto-campagne__search {
-  grid-column: 1 / -1;
+  flex: 0 0 270px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 270px;
+  min-width: 270px;
   min-height: 33px;
   padding: var(--space-small-2) var(--space-medium-1);
   border: 1px solid var(--color-border-neutral-standard);
@@ -561,6 +563,7 @@ body {
 }
 
 .proto-campagne__filter-field {
+  flex: 1 1 0;
   min-width: 0;
 }
 
@@ -603,13 +606,11 @@ body {
 
 .proto-campagne__filter-more {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   gap: var(--space-small-2);
-  grid-column: 1 / -1;
   height: 32px;
-  width: fit-content;
-  max-width: 100%;
   padding: var(--space-small-3);
   margin: 0;
   border: 1px solid var(--color-border-neutral-standard, #e2e2e2);
@@ -627,43 +628,6 @@ body {
 .proto-campagne__filter-more:focus-visible {
   outline: none;
   box-shadow: var(--focus-ring);
-}
-
-/* Tablette étroite : 3 colonnes, recherche sur 2 colonnes */
-@container campagne-filters (min-width: 560px) {
-  .proto-campagne__filters {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .proto-campagne__search {
-    grid-column: span 2;
-  }
-
-  .proto-campagne__filter-more {
-    grid-column: auto;
-  }
-}
-
-/* MacBook 14" et zone ~900–1500px : 5 colonnes, 2 rangées équilibrées */
-@container campagne-filters (min-width: 880px) {
-  .proto-campagne__filters {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .proto-campagne__search {
-    grid-column: span 2;
-  }
-}
-
-/* Grand écran : une ligne Figma (recherche 270px + 7 filtres + bouton) */
-@container campagne-filters (min-width: 1500px) {
-  .proto-campagne__filters {
-    grid-template-columns: minmax(240px, 270px) repeat(7, minmax(128px, 1fr)) max-content;
-  }
-
-  .proto-campagne__search {
-    grid-column: auto;
-  }
 }
 
 .proto-campagne__filter-more img {
