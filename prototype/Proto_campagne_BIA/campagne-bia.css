@@ -142,10 +142,30 @@ body {
   height: 48px;
 }
 
-.proto-app-header__logo img {
+.proto-app-header__logo img,
+.proto-app-header__logo .proto-icon--logo {
   display: block;
   width: 48px;
   height: 48px;
+}
+
+/* Sprite + icônes inline (déploiement Vercel) */
+.proto-icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.proto-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.ds-table__sort .proto-icon,
+.ds-table__btn-icon .proto-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .proto-app-header__nav {

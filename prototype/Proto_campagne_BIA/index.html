@@ -27,6 +27,86 @@
     <link rel="stylesheet" href="campagne-bia-manual-screen.css" />
   </head>
   <body>
+    <!-- Sprite SVG inline — icônes critiques (Vercel / chemins relatifs) -->
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="proto-icon-sprite">
+      <symbol id="proto-icon-logo" viewBox="0 0 47.4879 47.4888">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M31.0593 30.4918C30.021 33.2453 27.3033 35.7484 23.5568 35.7484C16.6492 35.7484 11.3934 31.1892 11.3934 23.9508C11.3934 17.0534 16.3577 11.7404 23.7474 11.7404C30.1372 11.7404 34.2426 16.7859 34.2426 16.7859L34.364 16.9354L34.2153 17.0585C34.2153 17.0585 31.5814 19.2334 31.4268 19.348L31.2712 19.4625L31.155 19.3078C28.8416 16.2125 25.7642 15.4057 23.5884 15.4057C18.9702 15.4057 15.3134 19.3326 15.3134 23.9508C15.3134 28.1742 18.5925 32.1241 23.5825 32.1241C27.6289 32.1241 30.1662 28.4699 30.5397 26.1052H24.3636V22.0972L24.5823 22.1237C27.905 22.5305 31.3541 22.5535 34.6776 22.1066L34.752 22.0963L35.0366 22.2946L35.0195 22.4134C34.3648 27.0854 34.5084 31.7515 35.2758 34.9297L35.3339 35.1699H31.0593V30.4918Z"
+          fill="#0F00B8"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M23.744 0C10.6388 0 0 10.6397 0 23.744C0 36.8491 10.6388 47.4888 23.744 47.4888C36.8491 47.4888 47.4879 36.8491 47.4879 23.744C47.4879 10.6397 36.8491 0 23.744 0ZM23.744 3.93198C34.6785 3.93198 43.556 12.8095 43.556 23.744C43.556 34.6785 34.6785 43.556 23.744 43.556C12.8095 43.556 3.93198 34.6785 3.93198 23.744C3.93198 12.8095 12.8095 3.93198 23.744 3.93198Z"
+          fill="#0F00B8"
+        />
+      </symbol>
+      <symbol id="proto-icon-chevron-up-down" viewBox="0 0 16 16">
+        <path
+          d="M10.3333 3.33268L7.66667 0.666016L5 3.33268"
+          stroke="#9E9E9E"
+          stroke-width="1.33333"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+        />
+        <path
+          d="M5 12.666L7.66667 15.3327L10.3333 12.666"
+          stroke="#9E9E9E"
+          stroke-width="1.33333"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+        />
+      </symbol>
+      <symbol id="proto-icon-eye" viewBox="0 0 16 16">
+        <path
+          d="M0.666992 7.99935C0.666992 7.99935 3.33366 2.66602 8.00032 2.66602C12.667 2.66602 15.3337 7.99935 15.3337 7.99935C15.3337 7.99935 12.667 13.3327 8.00032 13.3327C3.33366 13.3327 0.666992 7.99935 0.666992 7.99935Z"
+          stroke="#9E9E9E"
+          stroke-width="1.33"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+        />
+        <path
+          d="M8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z"
+          stroke="#9E9E9E"
+          stroke-width="1.33"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+        />
+      </symbol>
+      <symbol id="proto-icon-more-vertical" viewBox="0 0 16 16">
+        <path
+          d="M7.99967 8.66732C8.36786 8.66732 8.66634 8.36884 8.66634 8.00065C8.66634 7.63246 8.36786 7.33398 7.99967 7.33398C7.63148 7.33398 7.33301 7.63246 7.33301 8.00065C7.33301 8.36884 7.63148 8.66732 7.99967 8.66732Z"
+          stroke="#404043"
+          stroke-width="1.33"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+        />
+        <path
+          d="M7.99967 3.99935C8.36786 3.99935 8.66634 3.70087 8.66634 3.33268C8.66634 2.96449 8.36786 2.66602 7.99967 2.66602C7.63148 2.66602 7.33301 2.96449 7.33301 3.33268C7.33301 3.70087 7.63148 3.99935 7.99967 3.99935Z"
+          stroke="#404043"
+          stroke-width="1.33"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+        />
+        <path
+          d="M7.99967 13.3333C8.36786 13.3333 8.66634 13.0349 8.66634 12.6667C8.66634 12.2985 8.36786 12 7.99967 12C7.63148 12 7.33301 12.2985 7.33301 12.6667C7.33301 13.0349 7.63148 13.3333 7.99967 13.3333Z"
+          stroke="#404043"
+          stroke-width="1.33"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+        />
+      </symbol>
+    </svg>
+
     <p class="prototype-page__intro">
       Prototype · premier écran du flow
       <a
@@ -40,13 +120,9 @@
       <header class="proto-app-header" aria-label="En-tête application" data-node-id="4154:46155">
         <div class="proto-app-header__left">
           <div class="proto-app-header__logo">
-            <img
-              src="src/assets/icons/brand/application-logo-pdt490-48.svg"
-              width="48"
-              height="48"
-              alt=""
-              aria-hidden="true"
-            />
+            <svg class="proto-icon proto-icon--logo" width="48" height="48" aria-hidden="true" focusable="false">
+              <use href="#proto-icon-logo"></use>
+            </svg>
           </div>
           <nav class="proto-app-header__nav" aria-label="Navigation principale">
             <div class="proto-app-header__nav-cluster">
@@ -216,7 +292,7 @@
                     <span class="ds-table__th-inner">
                       Type de campagne
                       <button type="button" class="ds-table__sort" aria-label="Trier par type de campagne">
-                        <img src="src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                        <svg class="proto-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#proto-icon-chevron-up-down"></use></svg>
                       </button>
                     </span>
                   </th>
@@ -224,7 +300,7 @@
                     <span class="ds-table__th-inner">
                       Contrat cadre
                       <button type="button" class="ds-table__sort" aria-label="Trier par contrat cadre">
-                        <img src="src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                        <svg class="proto-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#proto-icon-chevron-up-down"></use></svg>
                       </button>
                     </span>
                   </th>
@@ -232,7 +308,7 @@
                     <span class="ds-table__th-inner">
                       produit
                       <button type="button" class="ds-table__sort" aria-label="Trier par produit">
-                        <img src="src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                        <svg class="proto-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#proto-icon-chevron-up-down"></use></svg>
                       </button>
                     </span>
                   </th>
@@ -240,7 +316,7 @@
                     <span class="ds-table__th-inner">
                       Taux
                       <button type="button" class="ds-table__sort" aria-label="Trier par taux">
-                        <img src="src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                        <svg class="proto-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#proto-icon-chevron-up-down"></use></svg>
                       </button>
                     </span>
                   </th>
@@ -248,7 +324,7 @@
                     <span class="ds-table__th-inner">
                       Nombre de destinataires
                       <button type="button" class="ds-table__sort" aria-label="Trier par nombre de destinataires">
-                        <img src="src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                        <svg class="proto-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#proto-icon-chevron-up-down"></use></svg>
                       </button>
                     </span>
                   </th>
@@ -256,7 +332,7 @@
                     <span class="ds-table__th-inner">
                       statut
                       <button type="button" class="ds-table__sort" aria-label="Trier par statut">
-                        <img src="src/assets/icons/chevron-up-down-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                        <svg class="proto-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#proto-icon-chevron-up-down"></use></svg>
                       </button>
                     </span>
                   </th>
@@ -280,7 +356,7 @@
                     <span class="proto-campagne__inline-cell">
                       <span>20 destinataires</span>
                       <button type="button" class="ds-table__btn-icon" aria-label="Voir le détail des destinataires">
-                        <img src="src/assets/icons/eye-16.svg" width="16" height="16" alt="" aria-hidden="true" />
+                        <svg class="proto-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#proto-icon-eye"></use></svg>
                       </button>
                     </span>
                   </td>
@@ -289,13 +365,7 @@
                   </td>
                   <td class="ds-table__td">
                     <button type="button" class="ds-table__btn-icon" aria-label="Actions sur la ligne" data-node-id="3819:17060">
-                      <img
-                        src="src/assets/icons/more-vertical-16-text-neutral-standard.svg"
-                        width="16"
-                        height="16"
-                        alt=""
-                        aria-hidden="true"
-                      />
+                      <svg class="proto-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#proto-icon-more-vertical"></use></svg>
                     </button>
                   </td>
                 </tr>
@@ -311,13 +381,9 @@
       <header class="proto-app-header cb-manual-screen__header" aria-label="En-tête application" data-node-id="4154:46155">
         <div class="proto-app-header__left">
           <div class="proto-app-header__logo">
-            <img
-              src="src/assets/icons/brand/application-logo-pdt490-48.svg"
-              width="48"
-              height="48"
-              alt=""
-              aria-hidden="true"
-            />
+            <svg class="proto-icon proto-icon--logo" width="48" height="48" aria-hidden="true" focusable="false">
+              <use href="#proto-icon-logo"></use>
+            </svg>
           </div>
           <nav class="proto-app-header__nav" aria-label="Navigation principale">
             <div class="proto-app-header__nav-cluster">

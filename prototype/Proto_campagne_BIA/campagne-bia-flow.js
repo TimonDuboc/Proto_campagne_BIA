@@ -1,4 +1,9 @@
 (function () {
+  var ICON_EYE =
+    '<svg class="proto-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#proto-icon-eye"></use></svg>';
+  var ICON_MORE_VERTICAL =
+    '<svg class="proto-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#proto-icon-more-vertical"></use></svg>';
+
   var dialog = document.getElementById("dialog-nouvelle-campagne");
   var openBtn = document.getElementById("open-modal-nouvelle-campagne");
   var backdrop = dialog && dialog.querySelector(".cb-modal__backdrop");
@@ -545,12 +550,12 @@
       '<td class="ds-table__td"><span class="proto-campagne__inline-cell"><span>' +
       escapeHtmlManual(destLabel) +
       '</span><button type="button" class="ds-table__btn-icon" aria-label="Voir le détail des destinataires">' +
-      '<img src="src/assets/icons/eye-16.svg" width="16" height="16" alt="" aria-hidden="true" /></button></span></td>' +
+      ICON_EYE + "</button></span></td>" +
       '<td class="ds-table__td">' +
       statutHtml +
       "</td>" +
       '<td class="ds-table__td"><button type="button" class="ds-table__btn-icon" aria-label="Actions sur la ligne">' +
-      '<img src="src/assets/icons/more-vertical-16-text-neutral-standard.svg" width="16" height="16" alt="" aria-hidden="true" /></button></td>';
+      ICON_MORE_VERTICAL + "</button></td>";
     tr.className = "proto-campagne__row proto-campagne__row--clickable";
     tr.setAttribute("tabindex", "0");
     tr._cbSnapshot = s;
@@ -1191,7 +1196,7 @@
       '<td class="ds-table__td ds-table__td--row-actions">' +
       '<div class="cb-launched-row-menu" data-cb-signed="true">' +
       '<button type="button" class="ds-table__btn-icon cb-launched-row-menu__trigger" aria-label="Actions pour cette ligne" aria-haspopup="menu" aria-expanded="false">' +
-      '<img src="src/assets/icons/more-vertical-16-text-neutral-standard.svg" width="16" height="16" alt="" aria-hidden="true" /></button>' +
+      ICON_MORE_VERTICAL + "</button>" +
       '<div class="ds-dropdown-content cb-launched-row-menu__panel" role="menu" aria-label="Actions pour cette ligne" hidden>' +
       '<ul class="ds-dropdown-content__list"><li role="none">' +
       '<button type="button" class="ds-dropdown-content__item cb-launched-row-download-bia" role="menuitem">' +
